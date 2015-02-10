@@ -8,10 +8,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBall.xnb</Output>
-      <Time>2015-02-04T14:22:54.4387126-05:00</Time>
+      <Time>2015-02-08T16:01:26.6509022-05:00</Time>
       <Dependency>
         <Key>obj\PSM\BeachBall_0.xml</Key>
-        <Value>2015-02-04T14:53:15.5538744-05:00</Value>
+        <Value>2015-02-08T17:18:57.4093742-05:00</Value>
       </Dependency>
       <Request>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture_0.xnb</Request>
     </Item>
@@ -22,14 +22,14 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture.xnb</Output>
-      <Time>2015-02-04T14:22:55.6617826-05:00</Time>
+      <Time>2015-02-08T16:01:26.6709022-05:00</Time>
     </Item>
     <Item>
       <Source>BeachBall.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\PSM\BeachBall_0.xml</Output>
-      <Time>2015-02-04T14:22:54.4387126-05:00</Time>
+      <Time>2015-02-08T16:01:26.6509022-05:00</Time>
     </Item>
     <Item>
       <Source>BeachBallTexture.png</Source>
@@ -45,7 +45,107 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture_0.xnb</Output>
-      <Time>2015-02-04T14:22:55.6617826-05:00</Time>
+      <Time>2015-02-08T16:01:26.6709022-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.fbx</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cube.xnb</Output>
+      <Time>2015-02-08T17:39:08.3956386-05:00</Time>
+      <Dependency>
+        <Key>obj\PSM\cube_0.xml</Key>
+        <Value>2015-02-08T17:39:11.8318352-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>cubeTexture.png</Source>
+      <Name>cubeTexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture.xnb</Output>
+      <Time>2015-02-08T17:39:08.3976387-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\PSM\cube_0.xml</Output>
+      <Time>2015-02-08T17:39:08.3956386-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cubeTexture.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture_0.xnb</Output>
+      <Time>2015-02-08T17:39:08.3976387-05:00</Time>
+    </Item>
+    <Item>
+      <Source>background.JPG</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\background.xnb</Output>
+      <Time>2015-02-09T19:26:58.312128-05:00</Time>
+    </Item>
+    <Item>
+      <Source>txtLes.png</Source>
+      <Name>txtLes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtLes.xnb</Output>
+      <Time>2015-02-09T20:05:29.3515167-05:00</Time>
+    </Item>
+    <Item>
+      <Source>txtMagouilleurs.png</Source>
+      <Name>txtMagouilleurs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtMagouilleurs.xnb</Output>
+      <Time>2015-02-09T20:05:29.3545169-05:00</Time>
+    </Item>
+    <Item>
+      <Source>plancheJouer4.jpg</Source>
+      <Name>plancheJouer4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheJouer4.xnb</Output>
+      <Time>2015-02-09T21:35:48.4994742-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planchePropos.jpg</Source>
+      <Name>planchePropos</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\planchePropos.xnb</Output>
+      <Time>2015-02-09T21:35:48.5024744-05:00</Time>
+    </Item>
+    <Item>
+      <Source>plancheRegle.jpg</Source>
+      <Name>plancheRegle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheRegle.xnb</Output>
+      <Time>2015-02-09T21:35:48.5014743-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
