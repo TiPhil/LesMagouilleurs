@@ -101,6 +101,9 @@ namespace LesMagouilleurs
 
             btnRegle = new Button(Content.Load<Texture2D>("planchePropos"), graphics.GraphicsDevice);
             btnRegle.setPosition(new Vector2(228, 472));
+
+            model = Content.Load<Model>("cubetest");
+
         }
 
         /// <summary>
@@ -187,7 +190,11 @@ namespace LesMagouilleurs
                     btnRegle.Draw(spriteBatch);
                     break;
 
-                case GameState.Playing: break;
+                case GameState.Playing:
+
+                    DrawModel(model, world, view, projection);
+                    
+                    break;
             }
 
             spriteBatch.End();

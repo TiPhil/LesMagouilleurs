@@ -17,3 +17,26 @@ C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouil
 C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheJouer4.xnb
 C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\planchePropos.xnb
 C:\Users\Philip\Documents\Visual Studio 2010\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheRegle.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBall.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cube.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\background.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtLes.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtMagouilleurs.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheJouer4.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\planchePropos.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheRegle.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture_0.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture_0.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBall.fbx
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture.png
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cube.fbx
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture.png
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubetestTexture.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubetest.xnb
+D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Cube1_auv_0.xnb
