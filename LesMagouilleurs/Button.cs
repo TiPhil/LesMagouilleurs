@@ -39,14 +39,14 @@ namespace LesMagouilleurs
 
             if (mouseRectangle.Intersects(rectangle))
             {
-                if (color.R == 255)
-                    color.R = 0;
+                if (color.B == 255)
+                    color.B = 0;
 
                 if (mouse.LeftButton == ButtonState.Pressed) clicked = true;
 
             }
-            else if (color.R == 0) {
-                color.R = 255;
+            else if (color.B == 0) {
+                color.B = 255;
                 clicked = false;
             }
         }
