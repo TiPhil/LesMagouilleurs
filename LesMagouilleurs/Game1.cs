@@ -22,13 +22,17 @@ namespace LesMagouilleurs
         MouseState previousMouseState;
 
         private Model model;
+
         private Texture2D background;
         private Texture2D txtLes;
         private Texture2D txtMagouilleurs;
 
         private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
-        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 0, 10), new Vector3(0, 0, 0), Vector3.UnitY);
+        private Matrix view = Matrix.CreateLookAt(new Vector3(2, 2, 2), new Vector3(0, 0, 0), Vector3.UnitY);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800 / 480f, 0.1f, 100f);
+        
+        //private Matrix world2 = Matrix.CreateTranslation(new Vector3(0, 0, -3));
+
 
         // Menu principal
         enum GameState 
@@ -39,8 +43,8 @@ namespace LesMagouilleurs
         }
 
         // Screen Adjustements
-        int screenWidth = 800;
-        int screenHeight = 600;
+        int screenWidth = 1280;
+        int screenHeight = 768;
 
         Button btnPlay;
         Button btnRegle;
@@ -102,8 +106,7 @@ namespace LesMagouilleurs
             btnRegle = new Button(Content.Load<Texture2D>("planchePropos"), graphics.GraphicsDevice);
             btnRegle.setPosition(new Vector2(228, 472));
 
-            model = Content.Load<Model>("cubetest");
-
+            model = Content.Load<Model>("board");
         }
 
         /// <summary>
@@ -138,7 +141,9 @@ namespace LesMagouilleurs
 
                     break;
 
-                case GameState.Playing: break;
+                case GameState.Playing:
+
+                break;
             }
 
             // Si le user vient de faire un click.
@@ -157,14 +162,26 @@ namespace LesMagouilleurs
 
             // Faire bouger le monde
             /*if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                //world *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.01f));
                 world *= Matrix.CreateRotationX(-0.05f);
+                world2 *= Matrix.CreateRotationX(0.05f);
+            }
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
                 world *= Matrix.CreateRotationX(0.05f);
+                world2 *= Matrix.CreateRotationX(-0.05f);
+            }
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
                 world *= Matrix.CreateRotationY(-0.05f);
+                world2 *= Matrix.CreateRotationY(0.05f);
+            }
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                world *= Matrix.CreateRotationY(0.05f);*/
-
+            {
+                world *= Matrix.CreateRotationY(0.05f);
+                world2 *= Matrix.CreateRotationY(-0.05f);
+            }*/
             base.Update(gameTime);
         }
 
@@ -192,14 +209,11 @@ namespace LesMagouilleurs
 
                 case GameState.Playing:
 
-                    DrawModel(model, world, view, projection);
-                    
+                    DrawModel(model, world, view, projection); 
                     break;
             }
 
             spriteBatch.End();
-
-            //DrawModel(model, world, view, projection);
 
             base.Draw(gameTime);
         }
