@@ -16,47 +16,73 @@ namespace LesMagouilleurs
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        // GameStates
+        private enum GameStates { ReadingRules, Waiting, RollingDice, RerollingDice, Magouille, MoneyLife }
 
-        MouseState previousMouseState;
+        // Window's size
+        private const int SCREEN_WIDTH = 1280;
+        private const int SCREEN_HEIGHT = 768;
 
-        private Model model;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
-        private Texture2D background;
-        private Texture2D txtLes;
-        private Texture2D txtMagouilleurs;
+        private MouseState previousMouseState;
 
-        private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+        // Ressources
+        private Texture2D rulesPanel;
+
+        // TO DELETE
+        //private Model model;
+        //private Texture2D background;
+        //private Texture2D txtLes;
+        //private Texture2D txtMagouilleurs;
+
+
+
+        // TO DELETE
+        //Button btnPlay;
+        //Button btnRegle;
+        //Button btnPropos;
+
+        // Buttons
+        private Button buttonCloseRules;
+         /* DO NOT DELETE
+        private Button buttonRollDice;
+         
+        private Button buttonRerollDice;
+        private Button buttonMoveToSpace;
+         
+        private Button buttonMagouille;
+        private Button buttonMegaMagouille;
+         
+        private Button buttonMoneyForLife;
+        private Button buttonLifeForMoney;
+         
+        private Button buttonFinishTurn;
+          * */
+        // End Buttons
+
+        // TO DELETE
+        //private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+
+        // Matrix
         private Matrix view = Matrix.CreateLookAt(new Vector3(2, 2, 2), new Vector3(0, 0, 0), Vector3.UnitY);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800 / 480f, 0.1f, 100f);
-        
-        //private Matrix world2 = Matrix.CreateTranslation(new Vector3(0, 0, -3));
 
 
-        // Menu principal
-        enum GameState 
-        {
-            MainMenu,
-            Options,
-            Playing
-        }
-
-        // Screen Adjustements
-        int screenWidth = 1280;
-        int screenHeight = 768;
-
-        Button btnPlay;
-        Button btnRegle;
-        Button btnPropos;
-
-        GameState CurrentGameState;
+        private GameStates currentGameState;
+        private GameStates previousGameState;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            // Screen format
+            graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
+            graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             graphics.IsFullScreen = false;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -71,7 +97,8 @@ namespace LesMagouilleurs
             base.Initialize();
 
             // Etat de base de l'application
-            CurrentGameState = GameState.MainMenu;
+            currentGameState = GameStates.ReadingRules;
+            previousGameState = GameStates.RollingDice;
 
             // Initialisation permettant le Mousse Click
             previousMouseState = Mouse.GetState();
@@ -87,12 +114,17 @@ namespace LesMagouilleurs
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // Screen format
-            graphics.PreferredBackBufferWidth = screenWidth;
-            graphics.PreferredBackBufferHeight = screenHeight;
+            buttonCloseRules = new Button(
+                Content.Load<Texture2D>("buttonCloseRules"),
+                graphics.GraphicsDevice,
+                new Vector2(200, 50),
+                new Vector2(540, 645));
 
-            graphics.ApplyChanges();
+            rulesPanel = Content.Load<Texture2D>("rulesPanel");
 
+            //buttonCloseRules.setPosition(new Vector2(540, 645));
+
+            /* TO DELETE
             background = Content.Load<Texture2D>("background");
             txtLes = Content.Load<Texture2D>("txtLes");
             txtMagouilleurs = Content.Load<Texture2D>("txtMagouilleurs");
@@ -107,6 +139,7 @@ namespace LesMagouilleurs
             btnRegle.setPosition(new Vector2(228, 472));
 
             model = Content.Load<Model>("board");
+             * */
         }
 
         /// <summary>
@@ -118,22 +151,33 @@ namespace LesMagouilleurs
         {
             // For Mobile devices, this logic will close the Game when the Back button is pressed
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
                 Exit();
-            }
 
             MouseState mouse = Mouse.GetState();
 
-            switch (CurrentGameState) {
-                case GameState.MainMenu:
+            switch (currentGameState) {
+
+                case GameStates.ReadingRules:
+                    if (buttonCloseRules.isClicked() == true)
+                        currentGameState = previousGameState;
+                    buttonCloseRules.Update(mouse);
+                    break;
+
+                case GameStates.RollingDice:
+                    // TODO
+                    break;
+
+                // TO DELETE
+                /*
+                case GameStates.MainMenu:
                     if (btnPlay.isClicked() == true)
-                        CurrentGameState = GameState.Playing;
+                        CurrentGameState = GameStates.Playing;
 
                     if (btnRegle.isClicked() == true)
-                        CurrentGameState = GameState.Playing;
+                        CurrentGameState = GameStates.Playing;
 
                     if (btnPropos.isClicked() == true)
-                        CurrentGameState = GameState.Playing;
+                        CurrentGameState = GameStates.Playing;
                     
                     btnPlay.Update(mouse);
                     btnRegle.Update(mouse);
@@ -141,11 +185,13 @@ namespace LesMagouilleurs
 
                     break;
 
-                case GameState.Playing:
+                case GameStates.Playing:
 
                 break;
+                 */
             }
 
+            // TO DELETE
             // Si le user vient de faire un click.
             /*if (previousMouseState.LeftButton == ButtonState.Released && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
@@ -191,13 +237,24 @@ namespace LesMagouilleurs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+            graphics.GraphicsDevice.Clear(Color.Violet);
 
             spriteBatch.Begin();
   
-            switch (CurrentGameState)
+            switch (currentGameState)
             {
-                case GameState.MainMenu:
+                case GameStates.ReadingRules:
+                    spriteBatch.Draw(rulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
+                    buttonCloseRules.Draw(spriteBatch);
+                    break;
+
+                case GameStates.RollingDice:
+
+                    break;
+
+                // TO DELETE
+                    /*
+                case GameStates.MainMenu:
 
                     spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
                     spriteBatch.Draw(txtLes, new Rectangle(335, 50, 130, 57), Color.White);
@@ -207,10 +264,11 @@ namespace LesMagouilleurs
                     btnRegle.Draw(spriteBatch);
                     break;
 
-                case GameState.Playing:
+                case GameStates.Playing:
 
                     DrawModel(model, world, view, projection); 
                     break;
+                     * */
             }
 
             spriteBatch.End();

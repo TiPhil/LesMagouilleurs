@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Cube1</Name>
     <Identity>
-      <SourceFilename>D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\cubetest.x</SourceFilename>
+      <SourceFilename>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\cubetest.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -31,7 +31,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>D:\Projects\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\cubetest.x</SourceFilename>
+        <SourceFilename>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\cubetest.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -49,6 +49,6 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\Cube1_auv.bmp</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\LesMagouilleursContentContent\Cube1_auv.bmp</ExternalReference>
   </ExternalReferences>
 </XnaContent>

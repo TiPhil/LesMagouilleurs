@@ -56,26 +56,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BeachBallTexture.png">
-      <Name>BeachBallTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="cube.fbx">
       <Name>cube</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="cubeTexture.png">
-      <Name>cubeTexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
@@ -130,13 +114,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cube1_auv.bmp">
-      <Name>Cube1_auv</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="board.x">
       <Name>board</Name>
       <Importer>XImporter</Importer>
@@ -144,8 +121,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="boardTexture.bmp">
-      <Name>boardTexture</Name>
+    <Compile Include="buttonCloseRules.png">
+      <Name>buttonCloseRules</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="rulesPanel.png">
+      <Name>rulesPanel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

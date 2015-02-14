@@ -21,13 +21,17 @@ namespace LesMagouilleurs
 
         private Vector2 size;
 
-        public Button(Texture2D newTexture, GraphicsDevice graphics) {
+        public Button(Texture2D newTexture, GraphicsDevice graphics, Vector2 size, Vector2 position) {
             texture = newTexture;
-            color = new Color(255, 255, 255, 255);
+            color = Color.White;
+            this.size = size;
+            this.position = position;
 
+            // TO DELETE
             //ScreenW = 800, ScreenH = 600;
             //ImgW = 344, ImgH = 115;
-            size = new Vector2(graphics.Viewport.Width / 2.33f, graphics.Viewport.Height / 5.22f);
+            //size = new Vector2(200, 50);
+            //size = new Vector2(1, 1);
         }
 
 
@@ -39,14 +43,15 @@ namespace LesMagouilleurs
 
             if (mouseRectangle.Intersects(rectangle))
             {
-                if (color.B == 255)
-                    color.B = 0;
+                if (color == Color.White)
+                    color = Color.LightGray;
 
                 if (mouse.LeftButton == ButtonState.Pressed) clicked = true;
 
             }
-            else if (color.B == 0) {
-                color.B = 255;
+            else if (color == Color.LightGray)
+            {
+                color = Color.White;
                 clicked = false;
             }
         }

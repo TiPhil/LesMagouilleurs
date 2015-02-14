@@ -67,3 +67,26 @@ C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursCo
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\boardTexture.xnb
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\board.xnb
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\boardTexture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBall.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cube.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\background.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtLes.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\txtMagouilleurs.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheJouer4.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\planchePropos.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\plancheRegle.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubetestTexture.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubetest.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\board.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBallTexture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cubeTexture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Cube1_auv_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\boardTexture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\BeachBall.fbx
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\cube.fbx
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonCloseRules.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\rulesPanel.xnb
