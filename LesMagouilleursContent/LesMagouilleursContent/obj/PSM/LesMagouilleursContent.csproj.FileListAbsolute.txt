@@ -90,3 +90,4 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesM
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonCloseRules.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\rulesPanel.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonSound.xnb

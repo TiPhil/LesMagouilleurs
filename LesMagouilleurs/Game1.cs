@@ -23,13 +23,14 @@ namespace LesMagouilleurs
         private const int SCREEN_WIDTH = 1280;
         private const int SCREEN_HEIGHT = 768;
 
+        private Ressources ressources;
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
         private MouseState previousMouseState;
 
         // Ressources
-        private Texture2D rulesPanel;
 
         // TO DELETE
         //private Model model;
@@ -69,7 +70,6 @@ namespace LesMagouilleurs
         private Matrix view = Matrix.CreateLookAt(new Vector3(2, 2, 2), new Vector3(0, 0, 0), Vector3.UnitY);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800 / 480f, 0.1f, 100f);
 
-
         private GameStates currentGameState;
         private GameStates previousGameState;
 
@@ -77,6 +77,8 @@ namespace LesMagouilleurs
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            ressources = new Ressources(Content, this.Services);
 
             // Screen format
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
@@ -109,7 +111,9 @@ namespace LesMagouilleurs
 
         protected override void LoadContent()
         {
-            Content = new ContentManager(this.Services, "Content");
+            ressources.Load();
+
+            //Content = new ContentManager(this.Services, "Content");
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -118,9 +122,9 @@ namespace LesMagouilleurs
                 Content.Load<Texture2D>("buttonCloseRules"),
                 graphics.GraphicsDevice,
                 new Vector2(200, 50),
-                new Vector2(540, 645));
+                new Vector2(540, 645),
+                ressources.ButtonClicked);
 
-            rulesPanel = Content.Load<Texture2D>("rulesPanel");
 
             //buttonCloseRules.setPosition(new Vector2(540, 645));
 
@@ -244,7 +248,7 @@ namespace LesMagouilleurs
             switch (currentGameState)
             {
                 case GameStates.ReadingRules:
-                    spriteBatch.Draw(rulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
+                    spriteBatch.Draw(ressources.RulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
                     buttonCloseRules.Draw(spriteBatch);
                     break;
 

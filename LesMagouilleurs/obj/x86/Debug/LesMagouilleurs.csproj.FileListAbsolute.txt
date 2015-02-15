@@ -179,3 +179,4 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\obj\x86\Debug\LesMagouilleurs.csprojResolveAssemblyReference.cache
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\buttonCloseRules.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\rulesPanel.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\buttonSound.xnb

@@ -15,5 +15,6 @@ Content\Cube1_auv_0.xnb
 Content\boardTexture_0.xnb
 Content\buttonCloseRules.xnb
 Content\rulesPanel.xnb
+Content\buttonSound.xnb
 Content\BeachBall.fbx
 Content\cube.fbx

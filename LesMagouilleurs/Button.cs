@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace LesMagouilleurs
 {
@@ -18,23 +19,30 @@ namespace LesMagouilleurs
         private Rectangle rectangle;
         private Color color;
         private bool clicked;
-
         private Vector2 size;
+        private SoundEffect clickedSound;
+        private bool haveSound;
 
-        public Button(Texture2D newTexture, GraphicsDevice graphics, Vector2 size, Vector2 position) {
+        // Contructor for a button WITHOUT a sound effect
+        public Button(Texture2D newTexture, GraphicsDevice graphics, Vector2 size, Vector2 position)
+        {
             texture = newTexture;
             color = Color.White;
             this.size = size;
             this.position = position;
-
-            // TO DELETE
-            //ScreenW = 800, ScreenH = 600;
-            //ImgW = 344, ImgH = 115;
-            //size = new Vector2(200, 50);
-            //size = new Vector2(1, 1);
+            haveSound = false;
         }
 
-
+        // Contructor for a button WITH a sound effect
+        public Button(Texture2D newTexture, GraphicsDevice graphics, Vector2 size, Vector2 position, SoundEffect clickedSound)
+        {
+            texture = newTexture;
+            color = Color.White;
+            this.size = size;
+            this.position = position;
+            this.clickedSound = clickedSound;
+            haveSound = true;
+        }
 
         public void Update(MouseState mouse) { 
             rectangle = new Rectangle((int) position.X, (int) position.Y, (int) size.X, (int) size.Y);
@@ -65,6 +73,8 @@ namespace LesMagouilleurs
         }
 
         public bool isClicked() {
+            if (haveSound && clicked)
+                clickedSound.Play();
             return clicked;
         }
 

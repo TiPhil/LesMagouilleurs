@@ -230,6 +230,15 @@
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\rulesPanel.xnb</Output>
       <Time>2015-02-14T11:48:41.4149974-05:00</Time>
     </Item>
+    <Item>
+      <Source>buttonSound.mp3</Source>
+      <Name>buttonSound</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonSound.xnb</Output>
+      <Time>2015-02-14T19:37:45.5208591-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D744F05C-EC34-434D-B9BA-1107770EBF61}</ContentProjectGUID>
