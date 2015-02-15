@@ -77,6 +77,5 @@ namespace LesMagouilleurs
                 clickedSound.Play();
             return clicked;
         }
-
     }
 }

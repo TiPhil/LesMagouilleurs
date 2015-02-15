@@ -12,6 +12,9 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace LesMagouilleurs
 {
+    /// <summary>
+    /// A container for all the textures, models, sound effects and musics
+    /// </summary>
     class Ressources
     {
         // Variables
@@ -20,13 +23,12 @@ namespace LesMagouilleurs
 
         private Texture2D rulesPanel;
         private SoundEffect buttonClicked;
-
+        private Model table;
 
         // Properties
         public Texture2D RulesPanel { get { return rulesPanel; } }
         public SoundEffect ButtonClicked { get { return buttonClicked; } }
-
-
+        public Model Table { get { return table; } }
 
         public Ressources(ContentManager Content, GameServiceContainer Services)
         {
@@ -40,6 +42,7 @@ namespace LesMagouilleurs
 
             rulesPanel = Content.Load<Texture2D>("rulesPanel");
             buttonClicked = Content.Load<SoundEffect>("buttonSound");
+            table = Content.Load<Model>("table");
         }
     }
 }

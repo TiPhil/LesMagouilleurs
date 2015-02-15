@@ -30,15 +30,11 @@ namespace LesMagouilleurs
 
         private MouseState previousMouseState;
 
-        // Ressources
-
         // TO DELETE
         //private Model model;
         //private Texture2D background;
         //private Texture2D txtLes;
         //private Texture2D txtMagouilleurs;
-
-
 
         // TO DELETE
         //Button btnPlay;
@@ -47,7 +43,6 @@ namespace LesMagouilleurs
 
         // Buttons
         private Button buttonCloseRules;
-         /* DO NOT DELETE
         private Button buttonRollDice;
          
         private Button buttonRerollDice;
@@ -60,14 +55,11 @@ namespace LesMagouilleurs
         private Button buttonLifeForMoney;
          
         private Button buttonFinishTurn;
-          * */
         // End Buttons
 
-        // TO DELETE
-        //private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
-
         // Matrix
-        private Matrix view = Matrix.CreateLookAt(new Vector3(2, 2, 2), new Vector3(0, 0, 0), Vector3.UnitY);
+        private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.UnitZ);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800 / 480f, 0.1f, 100f);
 
         private GameStates currentGameState;
@@ -168,7 +160,25 @@ namespace LesMagouilleurs
                     break;
 
                 case GameStates.RollingDice:
-                    // TODO
+                    /*
+                    // Faire bouger le monde
+                    if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                    {
+                        //world *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.01f));
+                        world *= Matrix.CreateRotationX(-0.05f);
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                    {
+                        world *= Matrix.CreateRotationX(0.05f);
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                    {
+                        world *= Matrix.CreateRotationY(-0.05f);
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                    {
+                        world *= Matrix.CreateRotationY(0.05f);
+                    }*/
                     break;
 
                 // TO DELETE
@@ -241,7 +251,7 @@ namespace LesMagouilleurs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            graphics.GraphicsDevice.Clear(Color.Violet);
+            graphics.GraphicsDevice.Clear(Color.Teal);
 
             spriteBatch.Begin();
   
@@ -250,10 +260,9 @@ namespace LesMagouilleurs
                 case GameStates.ReadingRules:
                     spriteBatch.Draw(ressources.RulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
                     buttonCloseRules.Draw(spriteBatch);
-                    break;
-
+                    goto case GameStates.RollingDice;
                 case GameStates.RollingDice:
-
+                    DrawModel(ressources.Table, world, view, projection); 
                     break;
 
                 // TO DELETE
