@@ -41,9 +41,9 @@ namespace LesMagouilleurs
         private Button buttonFinishTurn;
 
         // Matrix
-        private Matrix world = Matrix.CreateTranslation(new Vector3(0, 0, 0));
-        private Matrix world2 = Matrix.CreateTranslation(new Vector3(0, 1, 0));
-        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.UnitZ);
+        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
+        private Matrix worldGamePieceBlue1 = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
+        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
 
         private GameStates currentGameState;
@@ -127,23 +127,50 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
 
-                    // Faire bouger le monde
+                    // Change the view for a side view of the game
+                    if (Keyboard.GetState().IsKeyDown(Keys.C))
+                    {
+                        view = Matrix.CreateLookAt(new Vector3(0, 0, 13), new Vector3(0, 0, 0), Vector3.UnitY);
+                    }
+
+                    // Moves the angle of the camera - Look up, down, left or right
                     if (Keyboard.GetState().IsKeyDown(Keys.Up))
                     {
-                        //world *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.01f));
-                        world *= Matrix.CreateRotationX(-0.05f);
+                        view *= Matrix.CreateRotationX(-0.02f);
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.Down))
                     {
-                        world *= Matrix.CreateRotationX(0.05f);
+                        view *= Matrix.CreateRotationX(0.02f);
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.Left))
                     {
-                        world *= Matrix.CreateRotationY(-0.05f);
+                        view *= Matrix.CreateRotationY(-0.02f);
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     {
-                        world *= Matrix.CreateRotationY(0.05f);
+                        view *= Matrix.CreateRotationY(0.02f);
+                    }
+
+                    // Moves the position of the camera - Move forward, backward, strafe left or strafe right
+                    if (Keyboard.GetState().IsKeyDown(Keys.W))
+                    {
+                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, +0.1f));
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.S))
+                    {
+                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.A))
+                    {
+                        view *= Matrix.CreateTranslation(new Vector3(+0.1f, 0.0f, 0.0f));
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.D))
+                    {
+                        view *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                    {
+                        view *= Matrix.CreateTranslation(new Vector3(0.0f, -0.1f, 0.0f));
                     }
                     break;
             }
@@ -182,8 +209,8 @@ namespace LesMagouilleurs
                     goto case GameStates.RollingDice;
 
                 case GameStates.RollingDice:
-                    DrawModel(ressources.Table, world, view, projection);
-                    DrawModel(ressources.GamePieceBlue1, world, view, projection); 
+                    DrawModel(ressources.Table, worldBoard, view, projection);
+                    DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
                     break;
             }
 
