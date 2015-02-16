@@ -18,11 +18,14 @@ namespace LesMagouilleurs
     {
         // GameStates
         private enum GameStates { ReadingRules, Waiting, RollingDice, RerollingDice, Magouille, MoneyLife }
+        private GameStates currentGameState;
+        private GameStates previousGameState;
 
         // Window's size
         private const int SCREEN_WIDTH = 1280;
         private const int SCREEN_HEIGHT = 768;
 
+        // Misc
         private Ressources ressources;
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -45,9 +48,6 @@ namespace LesMagouilleurs
         private Matrix worldGamePieceBlue1 = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
-
-        private GameStates currentGameState;
-        private GameStates previousGameState;
 
         public Game1()
         {
@@ -127,10 +127,15 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
 
-                    // Change the view for a side view of the game
+                    // (C) Change the view for a side view of the game
                     if (Keyboard.GetState().IsKeyDown(Keys.C))
                     {
                         view = Matrix.CreateLookAt(new Vector3(0, 0, 13), new Vector3(0, 0, 0), Vector3.UnitY);
+                    }
+                    // (V) Reset the camera position to the default one
+                    if (Keyboard.GetState().IsKeyDown(Keys.V))
+                    {
+                        view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
                     }
 
                     // Moves the angle of the camera - Look up, down, left or right
