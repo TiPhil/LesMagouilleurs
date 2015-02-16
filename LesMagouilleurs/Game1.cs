@@ -122,6 +122,11 @@ namespace LesMagouilleurs
                 case GameStates.ReadingRules:
                     if (buttonCloseRules.isClicked() == true)
                         currentGameState = previousGameState;
+                    else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                    {
+                        ressources.ButtonClickedSound.Play();
+                        currentGameState = previousGameState;
+                    }
                     buttonCloseRules.Update(currentMouseState);
                     break;
 
@@ -132,13 +137,14 @@ namespace LesMagouilleurs
                     {
                         view = Matrix.CreateLookAt(new Vector3(0, 0, 13), new Vector3(0, 0, 0), Vector3.UnitY);
                     }
+
                     // (V) Reset the camera position to the default one
                     if (Keyboard.GetState().IsKeyDown(Keys.V))
                     {
                         view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
                     }
 
-                    // Moves the angle of the camera - Look up, down, left or right
+                    // (ARROWS) Moves the angle of the camera - Look up, down, left or right
                     if (Keyboard.GetState().IsKeyDown(Keys.Up))
                     {
                         view *= Matrix.CreateRotationX(-0.02f);
@@ -156,7 +162,7 @@ namespace LesMagouilleurs
                         view *= Matrix.CreateRotationY(0.02f);
                     }
 
-                    // Moves the position of the camera - Move forward, backward, strafe left or strafe right
+                    // (W, S, A, D, SPACEBAR) Moves the position of the camera - Move forward, backward, strafe left or strafe right
                     if (Keyboard.GetState().IsKeyDown(Keys.W))
                     {
                         view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, +0.1f));
@@ -241,6 +247,17 @@ namespace LesMagouilleurs
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
+                    effect.EnableDefaultLighting();
+
+                    //effect.LightingEnabled = true; // turn on the lighting subsystem.
+                    effect.DirectionalLight0.Direction = new Vector3(0.01f, -0.02f, 0.005f);  // coming along the x-axis
+                    effect.DirectionalLight0.SpecularColor = new Vector3(0.1f, 0.1f, 0.08f); // with green highlights
+                    effect.DirectionalLight0.DiffuseColor = new Vector3(0.1f, 0.1f, 0.08f); // a red light
+
+                    effect.AmbientLightColor = new Vector3(0.5f, 0.5f, 0.4f);
+                    effect.EmissiveColor = new Vector3(0, 0, 0);
+
+
                     effect.World = world;
                     effect.View = view;
                     effect.Projection = projection;
