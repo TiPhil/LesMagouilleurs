@@ -2,55 +2,55 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>buttonCloseRules.png</Source>
-      <Name>buttonCloseRules</Name>
+      <Source>Textures\buttonCloseRules.png</Source>
+      <Name>Textures\buttonCloseRules</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonCloseRules.xnb</Output>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonCloseRules.xnb</Output>
       <Time>2015-02-13T16:56:05.2711206-05:00</Time>
     </Item>
     <Item>
-      <Source>rulesPanel.png</Source>
-      <Name>rulesPanel</Name>
+      <Source>Textures\rulesPanel.png</Source>
+      <Name>Textures\rulesPanel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\rulesPanel.xnb</Output>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\rulesPanel.xnb</Output>
       <Time>2015-02-14T11:48:41.4149974-05:00</Time>
     </Item>
     <Item>
-      <Source>buttonSound.mp3</Source>
-      <Name>buttonSound</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\buttonSound.xnb</Output>
-      <Time>2015-02-14T19:37:45.5208591-05:00</Time>
-    </Item>
-    <Item>
-      <Source>table.x</Source>
-      <Name>table</Name>
+      <Source>Models\table.x</Source>
+      <Name>Models\table</Name>
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\table.xnb</Output>
-      <Time>2015-02-15T14:34:28.6762818-05:00</Time>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb</Output>
+      <Time>2015-02-15T19:26:18.9428832-05:00</Time>
       <Dependency>
-        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\table_0.xml</Key>
-        <Value>2015-02-15T14:34:39.4968864-05:00</Value>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\table_0.xml</Key>
+        <Value>2015-02-15T19:27:40.0769646-05:00</Value>
       </Dependency>
-      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\tableTexture_0.xnb</Request>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb</Request>
     </Item>
     <Item>
-      <Source>table.x</Source>
+      <Source>SoundEffects\buttonSound.mp3</Source>
+      <Name>SoundEffects\buttonSound</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\SoundEffects\buttonSound.xnb</Output>
+      <Time>2015-02-14T19:37:45.5208591-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\table.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\table_0.xml</Output>
-      <Time>2015-02-15T14:34:28.6762818-05:00</Time>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\table_0.xml</Output>
+      <Time>2015-02-15T19:26:18.9428832-05:00</Time>
     </Item>
     <Item>
-      <Source>tableTexture.jpg</Source>
+      <Source>Textures\tableTexture.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -62,8 +62,156 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\tableTexture_0.xnb</Output>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb</Output>
       <Time>2015-02-15T14:35:41.371385-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceBlue.x</Source>
+      <Name>Models\gamePieceBlue</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceBlue.xnb</Output>
+      <Time>2015-02-15T19:35:40.7199696-05:00</Time>
+      <Dependency>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceBlue_0.xml</Key>
+        <Value>2015-02-15T19:37:11.6595127-05:00</Value>
+      </Dependency>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceGreen.x</Source>
+      <Name>Models\gamePieceGreen</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceGreen.xnb</Output>
+      <Time>2015-02-15T19:35:57.4061218-05:00</Time>
+      <Dependency>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceGreen_0.xml</Key>
+        <Value>2015-02-15T19:37:11.8837937-05:00</Value>
+      </Dependency>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceRed.x</Source>
+      <Name>Models\gamePieceRed</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceRed.xnb</Output>
+      <Time>2015-02-15T19:36:06.7416965-05:00</Time>
+      <Dependency>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceRed_0.xml</Key>
+        <Value>2015-02-15T19:37:11.9779106-05:00</Value>
+      </Dependency>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceYellow.x</Source>
+      <Name>Models\gamePieceYellow</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceYellow.xnb</Output>
+      <Time>2015-02-15T19:37:07.7722929-05:00</Time>
+      <Dependency>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceYellow_0.xml</Key>
+        <Value>2015-02-15T19:37:12.073029-05:00</Value>
+      </Dependency>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceBlue.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceBlue_0.xml</Output>
+      <Time>2015-02-15T19:35:40.7199696-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\gamePieceBlue.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb</Output>
+      <Time>2015-02-15T19:34:44.4043017-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceGreen.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceGreen_0.xml</Output>
+      <Time>2015-02-15T19:35:57.4061218-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\gamePieceGreen.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb</Output>
+      <Time>2015-02-15T19:34:44.4053039-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceRed.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceRed_0.xml</Output>
+      <Time>2015-02-15T19:36:06.7416965-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\gamePieceRed.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb</Output>
+      <Time>2015-02-15T19:34:44.4063045-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\gamePieceYellow.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceYellow_0.xml</Output>
+      <Time>2015-02-15T19:37:07.7722929-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\gamePieceYellow.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb</Output>
+      <Time>2015-02-15T19:34:44.4033008-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

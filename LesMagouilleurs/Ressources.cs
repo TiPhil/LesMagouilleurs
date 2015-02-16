@@ -22,13 +22,27 @@ namespace LesMagouilleurs
         private GameServiceContainer Services;
 
         private Texture2D rulesPanel;
-        private SoundEffect buttonClicked;
+        private Texture2D buttonCloseRules;
+
         private Model table;
+        private Model gamePieceBlue1;
+        private Model gamePieceYellow2;
+        private Model gamePieceGreen3;
+        private Model gamePieceRed4;
+
+        private SoundEffect buttonClicked;
 
         // Properties
         public Texture2D RulesPanel { get { return rulesPanel; } }
-        public SoundEffect ButtonClicked { get { return buttonClicked; } }
+        public Texture2D ButtonCloseRules { get { return buttonCloseRules; } }
+
         public Model Table { get { return table; } }
+        public Model GamePieceBlue1 { get { return gamePieceBlue1; } }
+        public Model GamePieceYellow2 { get { return gamePieceYellow2; } }
+        public Model GamePieceGreen3 { get { return gamePieceGreen3; } }
+        public Model GamePieceRed4 { get { return gamePieceRed4; } }
+
+        public SoundEffect ButtonClickedSound { get { return buttonClicked; } }
 
         public Ressources(ContentManager Content, GameServiceContainer Services)
         {
@@ -40,9 +54,16 @@ namespace LesMagouilleurs
         {
             Content = new ContentManager(Services, "Content");
 
-            rulesPanel = Content.Load<Texture2D>("rulesPanel");
-            buttonClicked = Content.Load<SoundEffect>("buttonSound");
-            table = Content.Load<Model>("table");
+            rulesPanel = Content.Load<Texture2D>("Textures/rulesPanel");
+            buttonCloseRules = Content.Load<Texture2D>("Textures/buttonCloseRules");
+
+            table = Content.Load<Model>("Models/table");
+            gamePieceBlue1 = Content.Load<Model>("Models/gamePieceBlue");
+            gamePieceYellow2 = Content.Load<Model>("Models/gamePieceYellow");
+            gamePieceGreen3 = Content.Load<Model>("Models/gamePieceGreen");
+            gamePieceRed4 = Content.Load<Model>("Models/gamePieceRed");
+
+            buttonClicked = Content.Load<SoundEffect>("SoundEffects/buttonSound");
         }
     }
 }
