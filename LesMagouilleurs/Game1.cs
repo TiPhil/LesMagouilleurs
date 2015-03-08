@@ -132,6 +132,27 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
 
+                    // (Y) Move the blue cube
+                    if (Keyboard.GetState().IsKeyDown(Keys.Y))
+                    {
+                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
+                    }
+                    // (H) Move the blue cube
+                    if (Keyboard.GetState().IsKeyDown(Keys.H))
+                    {
+                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
+                    }
+                    // (G) Move the blue cube
+                    if (Keyboard.GetState().IsKeyDown(Keys.G))
+                    {
+                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
+                    }
+                    // (J) Move the blue cube
+                    if (Keyboard.GetState().IsKeyDown(Keys.J))
+                    {
+                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
+                    }
+
                     // (C) Change the view for a side view of the game
                     if (Keyboard.GetState().IsKeyDown(Keys.C))
                     {
@@ -165,7 +186,7 @@ namespace LesMagouilleurs
                     // (W, S, A, D, SPACEBAR) Moves the position of the camera - Move forward, backward, strafe left or strafe right
                     if (Keyboard.GetState().IsKeyDown(Keys.W))
                     {
-                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, +0.1f));
+                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.S))
                     {
@@ -173,7 +194,7 @@ namespace LesMagouilleurs
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.A))
                     {
-                        view *= Matrix.CreateTranslation(new Vector3(+0.1f, 0.0f, 0.0f));
+                        view *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
                     }
                     if (Keyboard.GetState().IsKeyDown(Keys.D))
                     {
