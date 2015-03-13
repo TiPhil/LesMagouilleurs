@@ -32,6 +32,9 @@ namespace LesMagouilleurs
 
         private SoundEffect buttonClicked;
 
+        private SpriteFont arial;
+
+
         // Properties
         public Texture2D RulesPanel { get { return rulesPanel; } }
         public Texture2D ButtonCloseRules { get { return buttonCloseRules; } }
@@ -43,6 +46,9 @@ namespace LesMagouilleurs
         public Model GamePieceRed4 { get { return gamePieceRed4; } }
 
         public SoundEffect ButtonClickedSound { get { return buttonClicked; } }
+
+        public SpriteFont Arial { get { return arial; } }
+
 
         public Ressources(ContentManager Content, GameServiceContainer Services)
         {
@@ -64,6 +70,8 @@ namespace LesMagouilleurs
             gamePieceRed4 = Content.Load<Model>("Models/gamePieceRed");
 
             buttonClicked = Content.Load<SoundEffect>("SoundEffects/buttonSound");
+
+            arial = Content.Load<SpriteFont>("Fonts/Arial");
         }
     }
 }

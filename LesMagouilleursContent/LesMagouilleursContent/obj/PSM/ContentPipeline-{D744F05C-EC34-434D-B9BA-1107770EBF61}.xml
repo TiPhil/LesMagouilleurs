@@ -29,7 +29,7 @@
       <Time>2015-02-15T19:26:18.9428832-05:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\table_0.xml</Key>
-        <Value>2015-02-15T19:27:40.0769646-05:00</Value>
+        <Value>2015-03-12T13:34:27.0332583-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb</Request>
     </Item>
@@ -75,7 +75,7 @@
       <Time>2015-02-15T19:35:40.7199696-05:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceBlue_0.xml</Key>
-        <Value>2015-02-15T19:37:11.6595127-05:00</Value>
+        <Value>2015-03-12T13:34:31.2565318-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb</Request>
     </Item>
@@ -89,7 +89,7 @@
       <Time>2015-02-15T19:35:57.4061218-05:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceGreen_0.xml</Key>
-        <Value>2015-02-15T19:37:11.8837937-05:00</Value>
+        <Value>2015-03-12T13:34:31.4362472-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb</Request>
     </Item>
@@ -103,7 +103,7 @@
       <Time>2015-02-15T19:36:06.7416965-05:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceRed_0.xml</Key>
-        <Value>2015-02-15T19:37:11.9779106-05:00</Value>
+        <Value>2015-03-12T13:34:31.5567232-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb</Request>
     </Item>
@@ -117,7 +117,7 @@
       <Time>2015-02-15T19:37:07.7722929-05:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceYellow_0.xml</Key>
-        <Value>2015-02-15T19:37:12.073029-05:00</Value>
+        <Value>2015-03-12T13:34:31.6560535-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb</Request>
     </Item>
@@ -212,6 +212,15 @@
       <Options>None</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb</Output>
       <Time>2015-02-15T19:34:44.4033008-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Arial.spritefont</Source>
+      <Name>Fonts\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Fonts\Arial.xnb</Output>
+      <Time>2015-03-12T14:55:07.6975807-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

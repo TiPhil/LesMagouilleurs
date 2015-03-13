@@ -22,8 +22,8 @@ namespace LesMagouilleurs
         private GameStates previousGameState;
 
         // Window's size
-        private const int SCREEN_WIDTH = 1280;
-        private const int SCREEN_HEIGHT = 768;
+        public const int SCREEN_WIDTH = 1280;
+        public const int SCREEN_HEIGHT = 768;
 
         // Misc
         private Ressources ressources;
@@ -49,18 +49,34 @@ namespace LesMagouilleurs
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
 
+        // Player interface
+        private PlayerInterface player1Interface;
+        private PlayerInterface player2Interface;
+        private PlayerInterface player3Interface;
+        private PlayerInterface player4Interface;
+
+        // Players
+        private Player player1;
+        private Player player2;
+        private Player player3;
+        private Player player4;
+
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+
             Content.RootDirectory = "Content";
 
             ressources = new Ressources(Content, this.Services);
+
 
             // Screen format
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
+
         }
 
         /// <summary>
@@ -85,6 +101,16 @@ namespace LesMagouilleurs
             IsMouseVisible = true;
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+
+            player1Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P1);
+            player2Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P2);
+            player3Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P3);
+            player4Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P4);
+
+            player1 = new Player(true, PlayerNumber.P1, "Joueur1", player1Interface);
+            player2 = new Player(false, PlayerNumber.P2, "Bot2", player2Interface);
+            player3 = new Player(false, PlayerNumber.P3, "Bot3", player3Interface);
+            player4 = new Player(false, PlayerNumber.P4, "Bot4", player4Interface);
         }
 
         protected override void LoadContent()
@@ -132,6 +158,7 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
 
+                    /* TEST TO MOVE THE CUBE -- TO DELETE
                     // (Y) Move the blue cube
                     if (Keyboard.GetState().IsKeyDown(Keys.Y))
                     {
@@ -152,6 +179,7 @@ namespace LesMagouilleurs
                     {
                         worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
                     }
+                    */
 
                     // (C) Change the view for a side view of the game
                     if (Keyboard.GetState().IsKeyDown(Keys.C))
@@ -232,6 +260,11 @@ namespace LesMagouilleurs
             graphics.GraphicsDevice.Clear(Color.Teal);
             SetupStates();
             spriteBatch.Begin();
+            player1Interface.Draw(spriteBatch, ressources);
+            player2Interface.Draw(spriteBatch, ressources);
+            player3Interface.Draw(spriteBatch, ressources);
+            player4Interface.Draw(spriteBatch, ressources);
+
 
             switch (currentGameState)
             {
@@ -242,7 +275,8 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
                     DrawModel(ressources.Table, worldBoard, view, projection);
-                    DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
+                    // TO DELETE
+                    //DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
                     break;
             }
 

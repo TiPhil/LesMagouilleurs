@@ -173,3 +173,4 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceGreen_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceRed_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceYellow_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Fonts\Arial.xnb
