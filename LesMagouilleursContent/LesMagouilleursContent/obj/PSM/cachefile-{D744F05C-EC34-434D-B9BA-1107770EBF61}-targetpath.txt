@@ -5,6 +5,7 @@ Content\Models\gamePieceBlue.xnb
 Content\Models\gamePieceGreen.xnb
 Content\Models\gamePieceRed.xnb
 Content\Models\gamePieceYellow.xnb
+Content\Models\board.xnb
 Content\SoundEffects\buttonSound.xnb
 Content\Fonts\Arial.xnb
 Content\Textures\tableTexture_0.xnb
@@ -12,5 +13,4 @@ Content\Textures\gamePieceBlue_0.xnb
 Content\Textures\gamePieceGreen_0.xnb
 Content\Textures\gamePieceRed_0.xnb
 Content\Textures\gamePieceYellow_0.xnb
-Content\Models\board.xnb
-Content\board_texture_0.xnb
+Content\Textures\board_texture_0.xnb

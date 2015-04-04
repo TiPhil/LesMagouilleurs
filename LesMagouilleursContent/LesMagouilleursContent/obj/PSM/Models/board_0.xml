@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Cube1</Name>
     <Identity>
-      <SourceFilename>C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
+      <SourceFilename>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -15,12 +15,12 @@
         <Geometry>
           <Batch>
             <Material>#Resource1</Material>
-            <Indices>0 1 2 0 2 3 0 3 4 0 4 5 0 5 6 0 6 7 7 6 8 7 8 9 10 9 8 10 8 11 5 4 12 5 12 13</Indices>
+            <Indices>0 1 2 0 2 3 4 5 6 4 6 7 0 7 8 0 8 1 9 8 10 9 10 11 3 2 12 3 12 13 7 6 10 7 10 8</Indices>
             <Vertices>
-              <PositionIndices>0 1 2 3 4 5 6 1 7 2 3 4 7 6</PositionIndices>
+              <PositionIndices>0 1 2 3 0 3 4 5 6 1 7 2 7 4</PositionIndices>
               <Channels>
-                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259</VertexChannel>
-                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.017844826 0.5167731 0.01222171 0.734852 0.016582299 0.734873 0.0153435906 0.5168789 0.0134387 0.985074937 0.0159389917 0.9852011 0.484726965 0.9872213 0.486633718 0.5185675 0.494102776 0.9872588 0.496009529 0.5186063 0.9646659 0.520511448 0.962759137 0.989167154 0.01645119 0.7670981 0.0120905731 0.767083645</VertexChannel>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.5091144 0.99205786 0.5090571 0.5153204 0.499519557 0.515322268 0.499576867 0.9920583 0.9907795 0.770024955 0.986343741 0.7700222 0.988532662 0.991767347 0.9859888 0.991885662 0.985931456 0.515377939 0.9907756 0.737237453 0.9884754 0.5154956 0.9863398 0.737241268 0.0227795448 0.515377939 0.0228368677 0.9921173</VertexChannel>
               </Channels>
             </Vertices>
           </Batch>
@@ -31,7 +31,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
+        <SourceFilename>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -49,6 +49,6 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">d:\Program Files\wings3d_1.5.3\board_texture.jpg</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\LesMagouilleursContentContent\Textures\board_texture.jpg</ExternalReference>
   </ExternalReferences>
 </XnaContent>

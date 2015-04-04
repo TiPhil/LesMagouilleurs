@@ -216,3 +216,5 @@ C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\D
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\obj\x86\Debug\LesMagouilleurs.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\board.xnb
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\board_texture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\board.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\board_texture_0.xnb
