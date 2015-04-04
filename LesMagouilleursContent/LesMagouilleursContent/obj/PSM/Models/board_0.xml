@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Name>Cube1</Name>
+    <Identity>
+      <SourceFilename>C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
+      <SourceTool>XImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child Type="Graphics:MeshContent">
+        <Name></Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Positions>-2.5 -0.05 2.5 -2.5 -0.05 -2.5 -2.5 0.05 -2.5 -2.5 0.05 2.5 2.5 0.05 2.5 2.5 -0.05 2.5 2.5 -0.05 -2.5 2.5 0.05 -2.5</Positions>
+        <Geometry>
+          <Batch>
+            <Material>#Resource1</Material>
+            <Indices>0 1 2 0 2 3 0 3 4 0 4 5 0 5 6 0 6 7 7 6 8 7 8 9 10 9 8 10 8 11 5 4 12 5 12 13</Indices>
+            <Vertices>
+              <PositionIndices>0 1 2 3 4 5 6 1 7 2 3 4 7 6</PositionIndices>
+              <Channels>
+                <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259</VertexChannel>
+                <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.017844826 0.5167731 0.01222171 0.734852 0.016582299 0.734873 0.0153435906 0.5168789 0.0134387 0.985074937 0.0159389917 0.9852011 0.484726965 0.9872213 0.486633718 0.5185675 0.494102776 0.9872588 0.496009529 0.5186063 0.9646659 0.520511448 0.962759137 0.989167154 0.01645119 0.7670981 0.0120905731 0.767083645</VertexChannel>
+              </Channels>
+            </Vertices>
+          </Batch>
+        </Geometry>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContentContent\Models\board.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+  </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">d:\Program Files\wings3d_1.5.3\board_texture.jpg</ExternalReference>
+  </ExternalReferences>
+</XnaContent>

@@ -174,3 +174,45 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceRed_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceYellow_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Fonts\Arial.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\obj\x86\Debug\LesMagouilleurs.exe
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\obj\x86\Debug\LesMagouilleurs.pdb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\buttonCloseRules.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\rulesPanel.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\table.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceBlue.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceGreen.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceRed.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceYellow.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\SoundEffects\buttonSound.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Fonts\Arial.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\tableTexture_0.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceBlue_0.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceGreen_0.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceRed_0.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\gamePieceYellow_0.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\LesMagouilleurs.exe
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\LesMagouilleurs.pdb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\IgnoreMe.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Lidgren.Network.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\obj\x86\Debug\LesMagouilleurs.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\board.xnb
+C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\board_texture_0.xnb

@@ -16,6 +16,10 @@ namespace LesMagouilleurs
     /// </summary>
     public class Game1 : Game
     {
+        // Configs
+        private bool cameraControl = true;
+        private bool controlableCube = false;
+
         // GameStates
         private enum GameStates { ReadingRules, Waiting, RollingDice, RerollingDice, Magouille, MoneyLife }
         private GameStates currentGameState;
@@ -44,8 +48,9 @@ namespace LesMagouilleurs
         private Button buttonFinishTurn;
 
         // Matrix
-        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
+        private Matrix worldTable = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
         private Matrix worldGamePieceBlue1 = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
+        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(1, 0.25f, 1));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
 
@@ -158,79 +163,83 @@ namespace LesMagouilleurs
 
                 case GameStates.RollingDice:
 
-                    /* TEST TO MOVE THE CUBE -- TO DELETE
-                    // (Y) Move the blue cube
-                    if (Keyboard.GetState().IsKeyDown(Keys.Y))
+                    if (controlableCube)
                     {
-                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
-                    }
-                    // (H) Move the blue cube
-                    if (Keyboard.GetState().IsKeyDown(Keys.H))
-                    {
-                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
-                    }
-                    // (G) Move the blue cube
-                    if (Keyboard.GetState().IsKeyDown(Keys.G))
-                    {
-                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
-                    }
-                    // (J) Move the blue cube
-                    if (Keyboard.GetState().IsKeyDown(Keys.J))
-                    {
-                        worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
-                    }
-                    */
-
-                    // (C) Change the view for a side view of the game
-                    if (Keyboard.GetState().IsKeyDown(Keys.C))
-                    {
-                        view = Matrix.CreateLookAt(new Vector3(0, 0, 13), new Vector3(0, 0, 0), Vector3.UnitY);
+                        // (Y) Move the blue cube
+                        if (Keyboard.GetState().IsKeyDown(Keys.Y))
+                        {
+                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
+                        }
+                        // (H) Move the blue cube
+                        if (Keyboard.GetState().IsKeyDown(Keys.H))
+                        {
+                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
+                        }
+                        // (G) Move the blue cube
+                        if (Keyboard.GetState().IsKeyDown(Keys.G))
+                        {
+                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
+                        }
+                        // (J) Move the blue cube
+                        if (Keyboard.GetState().IsKeyDown(Keys.J))
+                        {
+                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
+                        }
                     }
 
-                    // (V) Reset the camera position to the default one
-                    if (Keyboard.GetState().IsKeyDown(Keys.V))
+                    if (cameraControl)
                     {
-                        view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
-                    }
+                        // (C) Change the view for a side view of the game
+                        if (Keyboard.GetState().IsKeyDown(Keys.C))
+                        {
+                            view = Matrix.CreateLookAt(new Vector3(0, 0, 13), new Vector3(0, 0, 0), Vector3.UnitY);
+                        }
 
-                    // (ARROWS) Moves the angle of the camera - Look up, down, left or right
-                    if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                    {
-                        view *= Matrix.CreateRotationX(-0.02f);
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                    {
-                        view *= Matrix.CreateRotationX(0.02f);
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                    {
-                        view *= Matrix.CreateRotationY(-0.02f);
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                    {
-                        view *= Matrix.CreateRotationY(0.02f);
-                    }
+                        // (V) Reset the camera position to the default one
+                        if (Keyboard.GetState().IsKeyDown(Keys.V))
+                        {
+                            view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
+                        }
 
-                    // (W, S, A, D, SPACEBAR) Moves the position of the camera - Move forward, backward, strafe left or strafe right
-                    if (Keyboard.GetState().IsKeyDown(Keys.W))
-                    {
-                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.S))
-                    {
-                        view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.A))
-                    {
-                        view *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.D))
-                    {
-                        view *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
-                    }
-                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                    {
-                        view *= Matrix.CreateTranslation(new Vector3(0.0f, -0.1f, 0.0f));
+                        // (ARROWS) Moves the angle of the camera - Look up, down, left or right
+                        if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                        {
+                            view *= Matrix.CreateRotationX(-0.02f);
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                        {
+                            view *= Matrix.CreateRotationX(0.02f);
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                        {
+                            view *= Matrix.CreateRotationY(-0.02f);
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                        {
+                            view *= Matrix.CreateRotationY(0.02f);
+                        }
+
+                        // (W, S, A, D, SPACEBAR) Moves the position of the camera - Move forward, backward, strafe left or strafe right
+                        if (Keyboard.GetState().IsKeyDown(Keys.W))
+                        {
+                            view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.S))
+                        {
+                            view *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.A))
+                        {
+                            view *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.D))
+                        {
+                            view *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
+                        }
+                        if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                        {
+                            view *= Matrix.CreateTranslation(new Vector3(0.0f, -0.1f, 0.0f));
+                        }
                     }
                     break;
             }
@@ -274,9 +283,12 @@ namespace LesMagouilleurs
                     goto case GameStates.RollingDice;
 
                 case GameStates.RollingDice:
-                    DrawModel(ressources.Table, worldBoard, view, projection);
-                    // TO DELETE
-                    //DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
+                    DrawModel(ressources.Table, worldTable, view, projection);
+                    DrawModel(ressources.Board, worldBoard, view, projection);
+                    if (controlableCube)
+                    {
+                        DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
+                    }
                     break;
             }
 
