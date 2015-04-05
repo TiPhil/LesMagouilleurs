@@ -30,6 +30,7 @@ namespace LesMagouilleurs
         private Model gamePieceGreen3;
         private Model gamePieceRed4;
         private Model board;
+        private Model cubeTest;
 
         private SoundEffect buttonClicked;
 
@@ -46,6 +47,7 @@ namespace LesMagouilleurs
         public Model GamePieceGreen3 { get { return gamePieceGreen3; } }
         public Model GamePieceRed4 { get { return gamePieceRed4; } }
         public Model Board { get { return board; } }
+        public Model CubeTest { get { return cubeTest; } }
 
         public SoundEffect ButtonClickedSound { get { return buttonClicked; } }
 
@@ -71,6 +73,7 @@ namespace LesMagouilleurs
             gamePieceGreen3 = Content.Load<Model>("Models/gamePieceGreen");
             gamePieceRed4 = Content.Load<Model>("Models/gamePieceRed");
             board = Content.Load<Model>("Models/board");
+            cubeTest = Content.Load<Model>("Models/cubeTest");
 
             buttonClicked = Content.Load<SoundEffect>("SoundEffects/buttonSound");
 

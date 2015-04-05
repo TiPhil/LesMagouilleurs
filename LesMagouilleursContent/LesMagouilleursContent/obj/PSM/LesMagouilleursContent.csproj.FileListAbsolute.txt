@@ -67,24 +67,6 @@ C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursCo
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\boardTexture.xnb
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\board.xnb
 C:\Users\Philip\Desktop\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\boardTexture_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonCloseRules.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\rulesPanel.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\SoundEffects\buttonSound.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceBlue.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceGreen.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceRed.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceYellow.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Fonts\Arial.xnb
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonCloseRules.xnb
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\rulesPanel.xnb
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb
@@ -105,5 +87,25 @@ C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMag
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\board.xnb
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\board_texture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonCloseRules.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\rulesPanel.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceBlue.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceGreen.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceRed.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceYellow.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\board.xnb
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_texture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\cubeTest.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\SoundEffects\buttonSound.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Fonts\Arial.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\cubeTest_0.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache

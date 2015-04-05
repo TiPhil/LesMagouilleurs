@@ -50,7 +50,7 @@ namespace LesMagouilleurs
         // Matrix
         private Matrix worldTable = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
         private Matrix worldGamePieceBlue1 = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
-        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(1, 0.25f, 1));
+        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(0, 0, 0));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
 
@@ -116,6 +116,8 @@ namespace LesMagouilleurs
             player2 = new Player(false, PlayerNumber.P2, "Bot2", player2Interface);
             player3 = new Player(false, PlayerNumber.P3, "Bot3", player3Interface);
             player4 = new Player(false, PlayerNumber.P4, "Bot4", player4Interface);
+
+            worldBoard = Matrix.CreateScale(1.5f);
         }
 
         protected override void LoadContent()
@@ -285,6 +287,7 @@ namespace LesMagouilleurs
                 case GameStates.RollingDice:
                     DrawModel(ressources.Table, worldTable, view, projection);
                     DrawModel(ressources.Board, worldBoard, view, projection);
+                    //DrawModel(ressources.CubeTest, worldBoard, view, projection);
                     if (controlableCube)
                     {
                         DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
@@ -314,16 +317,14 @@ namespace LesMagouilleurs
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
+                    //effect.EnableDefaultLighting();
 
-                    //effect.LightingEnabled = true; // turn on the lighting subsystem.
-                    effect.DirectionalLight0.Direction = new Vector3(0.01f, -0.02f, 0.005f);  // coming along the x-axis
-                    effect.DirectionalLight0.SpecularColor = new Vector3(0.1f, 0.1f, 0.08f); // with green highlights
-                    effect.DirectionalLight0.DiffuseColor = new Vector3(0.1f, 0.1f, 0.08f); // a red light
-
-                    effect.AmbientLightColor = new Vector3(0.5f, 0.5f, 0.4f);
-                    effect.EmissiveColor = new Vector3(0, 0, 0);
-
+                    effect.LightingEnabled = true;
+                    effect.DirectionalLight0.Direction = new Vector3(0, -1, 0); // La lumiere vient d'en haut de la table
+                    effect.DirectionalLight0.SpecularColor = new Vector3(0.2f, 0.18f, 0.14f);
+                    effect.DirectionalLight0.DiffuseColor = new Vector3(0.1f, 0.08f, 0.4f);
+                    effect.AmbientLightColor = new Vector3(0.4f, 0.35f, 0.25f);
+                    effect.EmissiveColor = new Vector3(0.4f, 0.35f, 0.25f);
 
                     effect.World = world;
                     effect.View = view;

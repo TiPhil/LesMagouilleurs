@@ -26,10 +26,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb</Output>
-      <Time>2015-04-04T11:07:59.7525242-04:00</Time>
+      <Time>2015-04-04T19:08:10.1122096-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\table_0.xml</Key>
-        <Value>2015-04-04T18:53:11.6146668-04:00</Value>
+        <Value>2015-04-04T19:40:08.7524737-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\tableTexture_0.xnb</Request>
     </Item>
@@ -40,10 +40,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceBlue.xnb</Output>
-      <Time>2015-04-04T11:07:59.7495205-04:00</Time>
+      <Time>2015-04-04T19:07:30.9231221-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceBlue_0.xml</Key>
-        <Value>2015-04-04T18:53:15.8989749-04:00</Value>
+        <Value>2015-04-04T19:40:12.8436647-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceBlue_0.xnb</Request>
     </Item>
@@ -57,7 +57,7 @@
       <Time>2015-04-04T11:07:59.7505217-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceGreen_0.xml</Key>
-        <Value>2015-04-04T18:53:15.9930874-04:00</Value>
+        <Value>2015-04-04T19:40:12.9267685-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceGreen_0.xnb</Request>
     </Item>
@@ -71,7 +71,7 @@
       <Time>2015-04-04T11:07:59.751523-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceRed_0.xml</Key>
-        <Value>2015-04-04T18:53:16.086204-04:00</Value>
+        <Value>2015-04-04T19:40:13.0108831-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceRed_0.xnb</Request>
     </Item>
@@ -85,7 +85,7 @@
       <Time>2015-04-04T11:07:59.751523-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceYellow_0.xml</Key>
-        <Value>2015-04-04T18:53:16.1773175-04:00</Value>
+        <Value>2015-04-04T19:40:13.0959795-04:00</Value>
       </Dependency>
       <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\gamePieceYellow_0.xnb</Request>
     </Item>
@@ -96,12 +96,26 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\board.xnb</Output>
-      <Time>2015-04-04T18:58:59.7754274-04:00</Time>
+      <Time>2015-04-04T19:37:59.7126276-04:00</Time>
       <Dependency>
         <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\board_0.xml</Key>
-        <Value>2015-04-04T18:59:01.5825698-04:00</Value>
+        <Value>2015-04-04T19:40:13.1861033-04:00</Value>
       </Dependency>
-      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_texture_0.xnb</Request>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\cubeTest.x</Source>
+      <Name>Models\cubeTest</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\cubeTest.xnb</Output>
+      <Time>2015-04-04T19:18:53.7583869-04:00</Time>
+      <Dependency>
+        <Key>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\cubeTest_0.xml</Key>
+        <Value>2015-04-04T19:40:14.2726868-04:00</Value>
+      </Dependency>
+      <Request>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\cubeTest_0.xnb</Request>
     </Item>
     <Item>
       <Source>SoundEffects\buttonSound.mp3</Source>
@@ -126,7 +140,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\table_0.xml</Output>
-      <Time>2015-04-04T11:07:59.7525242-04:00</Time>
+      <Time>2015-04-04T19:08:10.1122096-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\tableTexture.jpg</Source>
@@ -149,7 +163,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\gamePieceBlue_0.xml</Output>
-      <Time>2015-04-04T11:07:59.7495205-04:00</Time>
+      <Time>2015-04-04T19:07:30.9231221-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\gamePieceBlue.jpg</Source>
@@ -241,10 +255,10 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\board_0.xml</Output>
-      <Time>2015-04-04T18:58:59.7754274-04:00</Time>
+      <Time>2015-04-04T19:37:59.7126276-04:00</Time>
     </Item>
     <Item>
-      <Source>Textures\board_texture.jpg</Source>
+      <Source>Textures\board.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -256,8 +270,31 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_texture_0.xnb</Output>
-      <Time>2015-04-04T18:55:19.2637781-04:00</Time>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\board_0.xnb</Output>
+      <Time>2015-04-04T19:39:59.1747614-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\cubeTest.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Models\cubeTest_0.xml</Output>
+      <Time>2015-04-04T19:18:53.7583869-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\cubeTest.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\cubeTest_0.xnb</Output>
+      <Time>2015-04-04T19:19:17.28677-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
