@@ -44,7 +44,8 @@ namespace LesMagouilleurs
             haveSound = true;
         }
 
-        public void Update(MouseState mouse) { 
+        public void Update(MouseState mouse) {
+            clicked = false;
             rectangle = new Rectangle((int) position.X, (int) position.Y, (int) size.X, (int) size.Y);
 
             Rectangle mouseRectangle = new Rectangle(mouse.X, mouse.Y, 1, 1);
@@ -54,7 +55,15 @@ namespace LesMagouilleurs
                 if (color == Color.White)
                     color = Color.LightGray;
 
-                if (mouse.LeftButton == ButtonState.Pressed) clicked = true;
+                if (mouse.LeftButton == ButtonState.Pressed)
+                {
+                    if (!clicked)
+                    {
+                        clicked = true;
+                        if (haveSound)
+                            clickedSound.Play();  
+                    } 
+                }
 
             }
             else if (color == Color.LightGray)
@@ -73,8 +82,6 @@ namespace LesMagouilleurs
         }
 
         public bool isClicked() {
-            if (haveSound && clicked)
-                clickedSound.Play();
             return clicked;
         }
     }

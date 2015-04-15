@@ -1,5 +1,6 @@
 Content\Textures\buttonCloseRules.xnb
 Content\Textures\rulesPanel.xnb
+Content\Textures\buttonDice.xnb
 Content\Models\table.xnb
 Content\Models\gamePieceBlue.xnb
 Content\Models\gamePieceGreen.xnb

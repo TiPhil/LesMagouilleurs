@@ -23,12 +23,13 @@ namespace LesMagouilleurs
 
         private Texture2D rulesPanel;
         private Texture2D buttonCloseRules;
+        private Texture2D buttonRollDice;
 
         private Model table;
-        private Model gamePieceBlue1;
-        private Model gamePieceYellow2;
-        private Model gamePieceGreen3;
-        private Model gamePieceRed4;
+        private Model gamePieceP1;
+        private Model gamePieceP2;
+        private Model gamePieceP3;
+        private Model gamePieceP4;
         private Model board;
         private Model cubeTest;
 
@@ -36,16 +37,16 @@ namespace LesMagouilleurs
 
         private SpriteFont arial;
 
-
         // Properties
         public Texture2D RulesPanel { get { return rulesPanel; } }
         public Texture2D ButtonCloseRules { get { return buttonCloseRules; } }
+        public Texture2D ButtonRollDice { get { return buttonRollDice; } }
 
         public Model Table { get { return table; } }
-        public Model GamePieceBlue1 { get { return gamePieceBlue1; } }
-        public Model GamePieceYellow2 { get { return gamePieceYellow2; } }
-        public Model GamePieceGreen3 { get { return gamePieceGreen3; } }
-        public Model GamePieceRed4 { get { return gamePieceRed4; } }
+        public Model GamePieceP1 { get { return gamePieceP1; } }
+        public Model GamePieceP2 { get { return gamePieceP2; } }
+        public Model GamePieceP3 { get { return gamePieceP3; } }
+        public Model GamePieceP4 { get { return gamePieceP4; } }
         public Model Board { get { return board; } }
         public Model CubeTest { get { return cubeTest; } }
 
@@ -66,12 +67,13 @@ namespace LesMagouilleurs
 
             rulesPanel = Content.Load<Texture2D>("Textures/rulesPanel");
             buttonCloseRules = Content.Load<Texture2D>("Textures/buttonCloseRules");
+            buttonRollDice = Content.Load<Texture2D>("Textures/buttonDice");
 
             table = Content.Load<Model>("Models/table");
-            gamePieceBlue1 = Content.Load<Model>("Models/gamePieceBlue");
-            gamePieceYellow2 = Content.Load<Model>("Models/gamePieceYellow");
-            gamePieceGreen3 = Content.Load<Model>("Models/gamePieceGreen");
-            gamePieceRed4 = Content.Load<Model>("Models/gamePieceRed");
+            gamePieceP1 = Content.Load<Model>("Models/gamePieceBlue");
+            gamePieceP2 = Content.Load<Model>("Models/gamePieceYellow");
+            gamePieceP3 = Content.Load<Model>("Models/gamePieceGreen");
+            gamePieceP4 = Content.Load<Model>("Models/gamePieceRed");
             board = Content.Load<Model>("Models/board");
             cubeTest = Content.Load<Model>("Models/cubeTest");
 

@@ -49,10 +49,17 @@ namespace LesMagouilleurs
 
         // Matrix
         private Matrix worldTable = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
-        private Matrix worldGamePieceBlue1 = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
-        private Matrix worldBoard = Matrix.CreateTranslation(new Vector3(0, 0, 0));
+        private Matrix worldGamePieceTest = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
+        private Matrix worldBoard = Matrix.CreateScale(1.5f) * Matrix.CreateTranslation(new Vector3(0, 0, -1));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
+        
+        // (2.8f, 0.3f, -3.8f) => millieu de la case en haut a droite
+        // (2.8f, 0.3f, 1.8f) => milieu de la case en bas a droite
+        private Matrix worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(2.4f, 0.3f, 1.4f));
+        private Matrix worldPieceP2 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(3.2f, 0.3f, 1.4f));
+        private Matrix worldPieceP3 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(2.4f, 0.3f, 2.2f));
+        private Matrix worldPieceP4 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(3.2f, 0.3f, 2.2f));
 
         // Player interface
         private PlayerInterface player1Interface;
@@ -65,7 +72,12 @@ namespace LesMagouilleurs
         private Player player2;
         private Player player3;
         private Player player4;
+        private Player currentPlayer;
 
+        // Vectors
+        private Vector3 position = new Vector3(2.4f, 0.3f, 1.4f);
+
+        private int compteur = 0;
 
         public Game1()
         {
@@ -117,7 +129,7 @@ namespace LesMagouilleurs
             player3 = new Player(false, PlayerNumber.P3, "Bot3", player3Interface);
             player4 = new Player(false, PlayerNumber.P4, "Bot4", player4Interface);
 
-            worldBoard = Matrix.CreateScale(1.5f);
+            currentPlayer = player1;
         }
 
         protected override void LoadContent()
@@ -129,11 +141,19 @@ namespace LesMagouilleurs
             
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
+            // Buttons
             buttonCloseRules = new Button(
                 ressources.ButtonCloseRules,
                 graphics.GraphicsDevice,
                 new Vector2(200, 50),
                 new Vector2(540, 645),
+                ressources.ButtonClickedSound);
+
+            buttonRollDice = new Button(
+                ressources.ButtonRollDice,
+                graphics.GraphicsDevice,
+                new Vector2(146, 146),
+                new Vector2(700, 600),
                 ressources.ButtonClickedSound);
         }
 
@@ -164,28 +184,37 @@ namespace LesMagouilleurs
                     break;
 
                 case GameStates.RollingDice:
+                    compteur = 0;
+
+                    //if (buttonRollDice.isClicked() == true)
+                        // do something
+                    if (buttonRollDice.isClicked())
+                    {
+                        currentGameState = GameStates.Waiting;
+                        //worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(1.5f, 0.3f, 1.4f));
+                    }
 
                     if (controlableCube)
                     {
                         // (Y) Move the blue cube
                         if (Keyboard.GetState().IsKeyDown(Keys.Y))
                         {
-                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
+                            worldGamePieceTest *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, -0.1f));
                         }
                         // (H) Move the blue cube
                         if (Keyboard.GetState().IsKeyDown(Keys.H))
                         {
-                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
+                            worldGamePieceTest *= Matrix.CreateTranslation(new Vector3(0.0f, 0.0f, 0.1f));
                         }
                         // (G) Move the blue cube
                         if (Keyboard.GetState().IsKeyDown(Keys.G))
                         {
-                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
+                            worldGamePieceTest *= Matrix.CreateTranslation(new Vector3(-0.1f, 0.0f, 0.0f));
                         }
                         // (J) Move the blue cube
                         if (Keyboard.GetState().IsKeyDown(Keys.J))
                         {
-                            worldGamePieceBlue1 *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
+                            worldGamePieceTest *= Matrix.CreateTranslation(new Vector3(0.1f, 0.0f, 0.0f));
                         }
                     }
 
@@ -243,7 +272,24 @@ namespace LesMagouilleurs
                             view *= Matrix.CreateTranslation(new Vector3(0.0f, -0.1f, 0.0f));
                         }
                     }
+                    buttonRollDice.Update(currentMouseState);
+
                     break;
+
+                case GameStates.Waiting:
+                    position += Vector3.Transform(new Vector3(0.1f, 0, 0), Matrix.CreateRotationY(MathHelper.ToRadians(180)));
+                    worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(position);
+
+                    compteur++;
+                    if (compteur == 18)
+                    {
+                        currentGameState = GameStates.RollingDice;
+                    }
+                    buttonRollDice.Update(currentMouseState);
+                    //Console.WriteLine("Button clicked? : " + buttonCloseRules.)
+                    break;
+
+
             }
 
             // TO DELETE
@@ -285,12 +331,22 @@ namespace LesMagouilleurs
                     goto case GameStates.RollingDice;
 
                 case GameStates.RollingDice:
+                    buttonRollDice.Draw(spriteBatch);
+                    goto case GameStates.Waiting;
+
+                case GameStates.Waiting:
                     DrawModel(ressources.Table, worldTable, view, projection);
                     DrawModel(ressources.Board, worldBoard, view, projection);
+                    DrawModel(ressources.GamePieceP1, worldPieceP1, view, projection);
+                    DrawModel(ressources.GamePieceP2, worldPieceP2, view, projection);
+                    DrawModel(ressources.GamePieceP3, worldPieceP3, view, projection);
+                    DrawModel(ressources.GamePieceP4, worldPieceP4, view, projection);
+
+                    //buttonRollDice.Draw(spriteBatch);
                     //DrawModel(ressources.CubeTest, worldBoard, view, projection);
                     if (controlableCube)
                     {
-                        DrawModel(ressources.GamePieceBlue1, worldGamePieceBlue1, view, projection); 
+                        DrawModel(ressources.GamePieceP1, worldGamePieceTest, view, projection); 
                     }
                     break;
             }

@@ -89,6 +89,7 @@ C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMag
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\board_texture_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonCloseRules.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\rulesPanel.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Textures\buttonDice.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\table.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceBlue.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\Content\Models\gamePieceGreen.xnb
@@ -108,4 +109,3 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesM
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
-D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache

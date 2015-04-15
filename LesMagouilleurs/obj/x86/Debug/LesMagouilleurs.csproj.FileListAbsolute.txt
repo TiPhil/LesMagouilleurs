@@ -178,6 +178,7 @@ C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\D
 C:\Users\Jonathan\Documents\GitHub\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\board_texture_0.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\buttonCloseRules.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\rulesPanel.xnb
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Textures\buttonDice.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\table.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceBlue.xnb
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleurs\bin\Windows\Debug\Content\Models\gamePieceGreen.xnb
