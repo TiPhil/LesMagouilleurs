@@ -15,11 +15,9 @@ namespace LesMagouilleurs
     /// <summary>
     /// A container for all the textures, models, sound effects and musics
     /// </summary>
-    class Ressources
+    public class Ressources
     {
-        // Variables
-        private ContentManager Content;
-        private GameServiceContainer Services;
+        private static Ressources instance;
 
         private Texture2D rulesPanel;
         private Texture2D buttonCloseRules;
@@ -54,32 +52,39 @@ namespace LesMagouilleurs
 
         public SpriteFont Arial { get { return arial; } }
 
+        private Ressources() { }
 
-        public Ressources(ContentManager Content, GameServiceContainer Services)
+        public static Ressources Instance
         {
-            this.Content = Content;
-            this.Services = Services;
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Ressources();
+                }
+                return instance;
+            }
         }
 
-        public void Load()
+        public void Load(GameServiceContainer Services)
         {
-            Content = new ContentManager(Services, "Content");
+            ContentManager content = new ContentManager(Services, "Content");
 
-            rulesPanel = Content.Load<Texture2D>("Textures/rulesPanel");
-            buttonCloseRules = Content.Load<Texture2D>("Textures/buttonCloseRules");
-            buttonRollDice = Content.Load<Texture2D>("Textures/buttonDice");
+            rulesPanel = content.Load<Texture2D>("Textures/rulesPanel");
+            buttonCloseRules = content.Load<Texture2D>("Textures/buttonCloseRules");
+            buttonRollDice = content.Load<Texture2D>("Textures/buttonDice");
 
-            table = Content.Load<Model>("Models/table");
-            gamePieceP1 = Content.Load<Model>("Models/gamePieceBlue");
-            gamePieceP2 = Content.Load<Model>("Models/gamePieceYellow");
-            gamePieceP3 = Content.Load<Model>("Models/gamePieceGreen");
-            gamePieceP4 = Content.Load<Model>("Models/gamePieceRed");
-            board = Content.Load<Model>("Models/board");
-            cubeTest = Content.Load<Model>("Models/cubeTest");
+            table = content.Load<Model>("Models/table");
+            gamePieceP1 = content.Load<Model>("Models/gamePieceBlue");
+            gamePieceP2 = content.Load<Model>("Models/gamePieceYellow");
+            gamePieceP3 = content.Load<Model>("Models/gamePieceGreen");
+            gamePieceP4 = content.Load<Model>("Models/gamePieceRed");
+            board = content.Load<Model>("Models/board");
+            cubeTest = content.Load<Model>("Models/cubeTest");
 
-            buttonClicked = Content.Load<SoundEffect>("SoundEffects/buttonSound");
+            buttonClicked = content.Load<SoundEffect>("SoundEffects/buttonSound");
 
-            arial = Content.Load<SpriteFont>("Fonts/Arial");
+            arial = content.Load<SpriteFont>("Fonts/Arial");
         }
     }
 }

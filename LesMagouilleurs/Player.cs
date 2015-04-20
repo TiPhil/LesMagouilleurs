@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +11,24 @@ namespace LesMagouilleurs
         P1, P2, P3, P4
     }
 
-    class Player
+    public class Player
     {
+        public const int DEFAULT_MONEY = 200;
+        public const int DEFAULT_HP = 10;
         private string name;
         private int money;
         private int hp; // Points de vie (PV)
         private PlayerNumber playerNumber;
         private bool isHuman;
-        private PlayerInterface playerInterface;
+        private PlayerUI playerUI;
+        private GamePiece gamePiece;
 
         public int Money
         {
             set
             {
                 money = value;
-                playerInterface.PlayerMoney = money.ToString();
+                playerUI.PlayerMoney = money.ToString();
             }
         }
         public int Hp
@@ -32,23 +36,33 @@ namespace LesMagouilleurs
             set
             {
                 hp = value;
-                playerInterface.PlayerHP = hp.ToString();
+                playerUI.PlayerHP = hp.ToString();
+            }
+        }
+        public PlayerUI PlayerUI
+        {
+            get
+            {
+                return playerUI;
+            }
+        }
+        public GamePiece GamePiece
+        {
+            get
+            {
+                return gamePiece;
             }
         }
 
-        public Player(bool isHuman, PlayerNumber playerNumber, string name, PlayerInterface playerInterface)
+        public Player(bool isHuman, PlayerNumber playerNumber, string name, GraphicsDevice graphics)
         {
             this.name = name;
             this.playerNumber = playerNumber;
             this.isHuman = isHuman;
-            this.playerInterface = playerInterface;
-            money = 200;
-            hp = 10;
-            playerInterface.PlayerName = name;
-            playerInterface.PlayerMoney = money.ToString();
-            playerInterface.PlayerHP = hp.ToString();
+            playerUI = new PlayerUI(graphics, playerNumber, name);
+            gamePiece = new GamePiece(playerNumber);
+            money = DEFAULT_MONEY;
+            hp = DEFAULT_HP;
         }
-
-
     }
 }

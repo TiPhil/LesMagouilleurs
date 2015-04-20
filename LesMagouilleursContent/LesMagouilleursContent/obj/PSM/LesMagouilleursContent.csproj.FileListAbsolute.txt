@@ -109,3 +109,4 @@ D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesM
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\bin\PSM\IgnoreMe.dll
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\IgnoreMe.dll
+D:\Projects\Les Magouilleurs - Local\LesMagouilleurs\LesMagouilleursContent\LesMagouilleursContent\obj\PSM\LesMagouilleursContent.csprojResolveAssemblyReference.cache

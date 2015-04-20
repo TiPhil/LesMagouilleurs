@@ -21,7 +21,7 @@ namespace LesMagouilleurs
         private bool controlableCube = false;
 
         // GameStates
-        private enum GameStates { ReadingRules, Waiting, RollingDice, RerollingDice, Magouille, MoneyLife }
+        private enum GameStates { ReadingRules, MovingGamePiece, RollingDice }
         private GameStates currentGameState;
         private GameStates previousGameState;
 
@@ -30,15 +30,15 @@ namespace LesMagouilleurs
         public const int SCREEN_HEIGHT = 768;
 
         // Misc
-        private Ressources ressources;
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private MouseState currentMouseState;
         private MouseState previousMouseState;
 
-        // Buttons
+        // Buttons - CREATE AN ASSETCONTAINER CLASS
         private Button buttonCloseRules;
         private Button buttonRollDice;
+        /* TODO
         private Button buttonRerollDice;
         private Button buttonMoveToSpace;
         private Button buttonMagouille;
@@ -46,26 +46,17 @@ namespace LesMagouilleurs
         private Button buttonMoneyForLife;
         private Button buttonLifeForMoney;
         private Button buttonFinishTurn;
+         */
 
         // Matrix
         private Matrix worldTable = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
-        private Matrix worldGamePieceTest = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0));
+        private Matrix worldGamePieceTest = Matrix.CreateTranslation(new Vector3(0, 0.5f, 0)); // to delete
         private Matrix worldBoard = Matrix.CreateScale(1.5f) * Matrix.CreateTranslation(new Vector3(0, 0, -1));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
         
         // (2.8f, 0.3f, -3.8f) => millieu de la case en haut a droite
         // (2.8f, 0.3f, 1.8f) => milieu de la case en bas a droite
-        private Matrix worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(2.4f, 0.3f, 1.4f));
-        private Matrix worldPieceP2 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(3.2f, 0.3f, 1.4f));
-        private Matrix worldPieceP3 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(2.4f, 0.3f, 2.2f));
-        private Matrix worldPieceP4 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(3.2f, 0.3f, 2.2f));
-
-        // Player interface
-        private PlayerInterface player1Interface;
-        private PlayerInterface player2Interface;
-        private PlayerInterface player3Interface;
-        private PlayerInterface player4Interface;
 
         // Players
         private Player player1;
@@ -75,18 +66,15 @@ namespace LesMagouilleurs
         private Player currentPlayer;
 
         // Vectors
-        private Vector3 position = new Vector3(2.4f, 0.3f, 1.4f);
+        private Vector3 position = new Vector3(2.4f, 0.3f, 1.4f); // what is this ?
 
-        private int compteur = 0;
+        private float compteur = 0;
 
         public Game1()
         {
+            // Graphic stuff
             graphics = new GraphicsDeviceManager(this);
-
             Content.RootDirectory = "Content";
-
-            ressources = new Ressources(Content, this.Services);
-
 
             // Screen format
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
@@ -109,7 +97,7 @@ namespace LesMagouilleurs
 
             // Etat de base de l'application
             currentGameState = GameStates.ReadingRules;
-            previousGameState = GameStates.RollingDice;
+            previousGameState = GameStates.RollingDice; // why??
 
             // Initialisation permettant le Mousse Click
             previousMouseState = Mouse.GetState();
@@ -119,22 +107,17 @@ namespace LesMagouilleurs
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-            player1Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P1);
-            player2Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P2);
-            player3Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P3);
-            player4Interface = new PlayerInterface(ressources.Arial, graphics.GraphicsDevice, PlayerNumber.P4);
-
-            player1 = new Player(true, PlayerNumber.P1, "Joueur1", player1Interface);
-            player2 = new Player(false, PlayerNumber.P2, "Bot2", player2Interface);
-            player3 = new Player(false, PlayerNumber.P3, "Bot3", player3Interface);
-            player4 = new Player(false, PlayerNumber.P4, "Bot4", player4Interface);
+            player1 = new Player(true, PlayerNumber.P1, "Joueur1", graphics.GraphicsDevice);
+            player2 = new Player(false, PlayerNumber.P2, "Bot2", graphics.GraphicsDevice);
+            player3 = new Player(false, PlayerNumber.P3, "Bot3", graphics.GraphicsDevice);
+            player4 = new Player(false, PlayerNumber.P4, "Bot4", graphics.GraphicsDevice);
 
             currentPlayer = player1;
         }
 
         protected override void LoadContent()
         {
-            ressources.Load();
+            Ressources.Instance.Load(this.Services);
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -143,18 +126,18 @@ namespace LesMagouilleurs
 
             // Buttons
             buttonCloseRules = new Button(
-                ressources.ButtonCloseRules,
+                Ressources.Instance.ButtonCloseRules,
                 graphics.GraphicsDevice,
                 new Vector2(200, 50),
                 new Vector2(540, 645),
-                ressources.ButtonClickedSound);
+                Ressources.Instance.ButtonClickedSound);
 
             buttonRollDice = new Button(
-                ressources.ButtonRollDice,
+                Ressources.Instance.ButtonRollDice,
                 graphics.GraphicsDevice,
                 new Vector2(146, 146),
                 new Vector2(700, 600),
-                ressources.ButtonClickedSound);
+                Ressources.Instance.ButtonClickedSound);
         }
 
         /// <summary>
@@ -177,7 +160,7 @@ namespace LesMagouilleurs
                         currentGameState = previousGameState;
                     else if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                     {
-                        ressources.ButtonClickedSound.Play();
+                        Ressources.Instance.ButtonClickedSound.Play();
                         currentGameState = previousGameState;
                     }
                     buttonCloseRules.Update(currentMouseState);
@@ -190,7 +173,7 @@ namespace LesMagouilleurs
                         // do something
                     if (buttonRollDice.isClicked())
                     {
-                        currentGameState = GameStates.Waiting;
+                        currentGameState = GameStates.MovingGamePiece;
                         //worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(1.5f, 0.3f, 1.4f));
                     }
 
@@ -276,17 +259,19 @@ namespace LesMagouilleurs
 
                     break;
 
-                case GameStates.Waiting:
-                    position += Vector3.Transform(new Vector3(0.1f, 0, 0), Matrix.CreateRotationY(MathHelper.ToRadians(180)));
-                    worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(position);
+                case GameStates.MovingGamePiece:
+                    // TO DELETE! 
+                    //float x = 0.1f;
+                    //float y = 0;
+                    //x += 0.01f;
+                    //compteur += 0.01f;
+                    //position += Vector3.Transform(new Vector3(0.05f, (float)Math.Sin(y), 0), Matrix.CreateRotationY(MathHelper.ToRadians(180)));
+                    //worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(position);
+                    //player1.GamePiece.World = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(position);
 
-                    compteur++;
-                    if (compteur == 18)
-                    {
-                        currentGameState = GameStates.RollingDice;
-                    }
+
+
                     buttonRollDice.Update(currentMouseState);
-                    //Console.WriteLine("Button clicked? : " + buttonCloseRules.)
                     break;
 
 
@@ -317,36 +302,36 @@ namespace LesMagouilleurs
             graphics.GraphicsDevice.Clear(Color.Teal);
             SetupStates();
             spriteBatch.Begin();
-            player1Interface.Draw(spriteBatch, ressources);
-            player2Interface.Draw(spriteBatch, ressources);
-            player3Interface.Draw(spriteBatch, ressources);
-            player4Interface.Draw(spriteBatch, ressources);
 
+            DrawUI();
 
             switch (currentGameState)
             {
                 case GameStates.ReadingRules:
-                    spriteBatch.Draw(ressources.RulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
+                    spriteBatch.Draw(Ressources.Instance.RulesPanel, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
                     buttonCloseRules.Draw(spriteBatch);
                     goto case GameStates.RollingDice;
 
                 case GameStates.RollingDice:
                     buttonRollDice.Draw(spriteBatch);
-                    goto case GameStates.Waiting;
+                    goto case GameStates.MovingGamePiece;
 
-                case GameStates.Waiting:
-                    DrawModel(ressources.Table, worldTable, view, projection);
-                    DrawModel(ressources.Board, worldBoard, view, projection);
-                    DrawModel(ressources.GamePieceP1, worldPieceP1, view, projection);
-                    DrawModel(ressources.GamePieceP2, worldPieceP2, view, projection);
-                    DrawModel(ressources.GamePieceP3, worldPieceP3, view, projection);
-                    DrawModel(ressources.GamePieceP4, worldPieceP4, view, projection);
+                case GameStates.MovingGamePiece:
+                    goto default;
+
+                default:
+                    DrawModel(Ressources.Instance.Table, worldTable, view, projection);
+                    DrawModel(Ressources.Instance.Board, worldBoard, view, projection);
+                    DrawModel(Ressources.Instance.GamePieceP1, player1.GamePiece.World, view, projection);
+                    DrawModel(Ressources.Instance.GamePieceP2, player2.GamePiece.World, view, projection);
+                    DrawModel(Ressources.Instance.GamePieceP3, player3.GamePiece.World, view, projection);
+                    DrawModel(Ressources.Instance.GamePieceP4, player4.GamePiece.World, view, projection);
 
                     //buttonRollDice.Draw(spriteBatch);
                     //DrawModel(ressources.CubeTest, worldBoard, view, projection);
                     if (controlableCube)
                     {
-                        DrawModel(ressources.GamePieceP1, worldGamePieceTest, view, projection); 
+                        DrawModel(Ressources.Instance.GamePieceP1, worldGamePieceTest, view, projection); 
                     }
                     break;
             }
@@ -354,6 +339,14 @@ namespace LesMagouilleurs
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawUI()
+        {
+            player1.PlayerUI.Draw(spriteBatch, Ressources.Instance);
+            player2.PlayerUI.Draw(spriteBatch, Ressources.Instance);
+            player3.PlayerUI.Draw(spriteBatch, Ressources.Instance);
+            player4.PlayerUI.Draw(spriteBatch, Ressources.Instance);
         }
 
         private void SetupStates()

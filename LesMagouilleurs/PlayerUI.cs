@@ -7,7 +7,7 @@ using System.Text;
 
 namespace LesMagouilleurs
 {
-    class PlayerInterface
+    public class PlayerUI
     {
         private int width = 200;
         private int height = 50;
@@ -28,8 +28,13 @@ namespace LesMagouilleurs
         public string PlayerMoney { set { playerMoney = value; } }
         public string PlayerHP { set { playerHP = value; } }
 
-        public PlayerInterface(SpriteFont spriteFont, GraphicsDevice graphics, PlayerNumber playerNumber)
+        public PlayerUI(GraphicsDevice graphics, PlayerNumber playerNumber, string playerName)
         {
+            // Set default values for name, money and HP
+            this.playerName = playerName;
+            playerMoney = Player.DEFAULT_MONEY.ToString();
+            playerHP = Player.DEFAULT_HP.ToString();
+
             hudBackgroundTexture = new Texture2D(graphics, 1, 1, false, SurfaceFormat.Color);
             hudColorTexture = new Texture2D(graphics, 1, 1, false, SurfaceFormat.Color);
 

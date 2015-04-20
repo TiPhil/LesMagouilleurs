@@ -37,7 +37,8 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="PlayerInterface.cs" />
+    <Compile Include="GamePiece.cs" />
+    <Compile Include="PlayerUI.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
