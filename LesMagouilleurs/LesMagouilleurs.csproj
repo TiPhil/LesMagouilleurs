@@ -35,9 +35,13 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
+    <Compile Include="BoardTile.cs" />
     <Compile Include="Button.cs" />
+    <Compile Include="CameraController.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GamePiece.cs" />
+    <Compile Include="DialogBox.cs" />
     <Compile Include="PlayerUI.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

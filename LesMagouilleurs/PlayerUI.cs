@@ -49,17 +49,17 @@ namespace LesMagouilleurs
 
                 case PlayerNumber.P2: ;
                     hudColorColor = new Color(255, 0, 0, 255);
-                    position = new Vector2(Game1.SCREEN_WIDTH - width, 0); // TODO
+                    position = new Vector2(Game1.SCREEN_WIDTH - width, 0);
                     break;
 
                 case PlayerNumber.P3: ;
                     hudColorColor = new Color(0, 255, 0, 255);
-                    position = new Vector2(0, Game1.SCREEN_HEIGHT - height); // TODO
+                    position = new Vector2(0, Game1.SCREEN_HEIGHT - height);
                     break;
 
                 case PlayerNumber.P4: ;
                     hudColorColor = new Color(255, 255, 0, 255);
-                    position = new Vector2(Game1.SCREEN_WIDTH - width, Game1.SCREEN_HEIGHT - height); // TODO
+                    position = new Vector2(Game1.SCREEN_WIDTH - width, Game1.SCREEN_HEIGHT - height);
                     break;
 
                 default: ;
@@ -78,13 +78,13 @@ namespace LesMagouilleurs
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, Ressources ressources)
+        public void Draw(SpriteBatch spriteBatch)
         {
             //spriteBatch.Draw(texture, whiteBackground, myTransparentColor);
             spriteBatch.Draw(hudBackgroundTexture, position, hudBackgroundRectangle, hudBackgroundColor);
             spriteBatch.Draw(hudColorTexture, position + new Vector2(0, height / 5 * 4), hudColorRectangle, hudColorColor);
             //spriteBatch.DrawString(ressources.Arial, playerStats, position + new Vector2(9, 9), Color.Black);
-            spriteBatch.DrawString(ressources.Arial, playerName + " " + playerMoney + " $ " + playerHP + " PV", position + new Vector2(9, 9), Color.Black);
+            spriteBatch.DrawString(Ressources.Instance.Arial, playerName + " " + playerMoney + " $ " + playerHP + " PV", position + new Vector2(9, 9), Color.Black);
 
         }
 

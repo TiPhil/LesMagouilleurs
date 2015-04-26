@@ -76,9 +76,9 @@ namespace LesMagouilleurs
 
             table = content.Load<Model>("Models/table");
             gamePieceP1 = content.Load<Model>("Models/gamePieceBlue");
-            gamePieceP2 = content.Load<Model>("Models/gamePieceYellow");
+            gamePieceP2 = content.Load<Model>("Models/gamePieceRed");
             gamePieceP3 = content.Load<Model>("Models/gamePieceGreen");
-            gamePieceP4 = content.Load<Model>("Models/gamePieceRed");
+            gamePieceP4 = content.Load<Model>("Models/gamePieceYellow");
             board = content.Load<Model>("Models/board");
             cubeTest = content.Load<Model>("Models/cubeTest");
 

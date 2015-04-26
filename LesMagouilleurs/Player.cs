@@ -23,8 +23,26 @@ namespace LesMagouilleurs
         private PlayerUI playerUI;
         private GamePiece gamePiece;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+        public bool IsHuman
+        {
+            get
+            {
+                return isHuman;
+            }
+        }
         public int Money
         {
+            get
+            {
+                return money;
+            }
             set
             {
                 money = value;
@@ -33,6 +51,10 @@ namespace LesMagouilleurs
         }
         public int Hp
         {
+            get
+            {
+                return hp;
+            }
             set
             {
                 hp = value;

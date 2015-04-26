@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace LesMagouilleurs
 {
-    class Button
+    public class Button
     {
         private Texture2D texture;
         private Vector2 position;
@@ -59,9 +59,7 @@ namespace LesMagouilleurs
                 {
                     if (!clicked)
                     {
-                        clicked = true;
-                        if (haveSound)
-                            clickedSound.Play();  
+                        clicked = true; 
                     } 
                 }
 
@@ -81,7 +79,10 @@ namespace LesMagouilleurs
             spriteBatch.Draw(texture, rectangle, color);
         }
 
-        public bool isClicked() {
+        public bool isClicked()
+        {
+            if (haveSound && clicked)
+                clickedSound.Play(); 
             return clicked;
         }
     }
