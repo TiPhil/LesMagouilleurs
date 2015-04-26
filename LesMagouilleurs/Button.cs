@@ -22,10 +22,12 @@ namespace LesMagouilleurs
         private Vector2 size;
         private SoundEffect clickedSound;
         private bool haveSound;
+        private static double lastClick;
 
         // Contructor for a button WITHOUT a sound effect
         public Button(Texture2D newTexture, GraphicsDevice graphics, Vector2 size, Vector2 position)
         {
+            lastClick = 0;
             texture = newTexture;
             color = Color.White;
             this.size = size;
@@ -44,7 +46,7 @@ namespace LesMagouilleurs
             haveSound = true;
         }
 
-        public void Update(MouseState mouse) {
+        public void Update(MouseState mouse, double totalGameTimeMilliseconds) {
             clicked = false;
             rectangle = new Rectangle((int) position.X, (int) position.Y, (int) size.X, (int) size.Y);
 
@@ -57,9 +59,10 @@ namespace LesMagouilleurs
 
                 if (mouse.LeftButton == ButtonState.Pressed)
                 {
-                    if (!clicked)
+                    if (!clicked && totalGameTimeMilliseconds - lastClick > 500)
                     {
-                        clicked = true; 
+                        clicked = true;
+                        lastClick = totalGameTimeMilliseconds;
                     } 
                 }
 

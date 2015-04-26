@@ -14,12 +14,12 @@ namespace LesMagouilleurs
         {
             switch (effectType)
             {
-                case EffectType.Magouille1: return "Magouille : -1 PV aux autres joueurs.";
-                case EffectType.Magouille2: return "Magouille : -20 $ aux autres joueurs.";
-                case EffectType.Malchance1: return "Malchance : -2 PV.";
-                case EffectType.Malchance2: return "Malchance : -40 $.";
-                case EffectType.Paye: return "Paye : +40 $.";
-                case EffectType.Service: return "Service : -20 $ et +1 PV.";
+                case EffectType.Magouille1: return "Magouille : -2 PV aux autres joueurs.";
+                case EffectType.Magouille2: return "Magouille : -40 $ aux autres joueurs.";
+                case EffectType.Malchance1: return "Malchance : -3 PV.";
+                case EffectType.Malchance2: return "Malchance : -60 $.";
+                case EffectType.Paye: return "Paye : +20 $.";
+                case EffectType.Service: return "Service : -40 $ et +1 PV.";
                 default: return "";
             }
         }
@@ -30,23 +30,50 @@ namespace LesMagouilleurs
             {
                 case EffectType.Magouille1:
                     foreach (Player p in otherPlayerList)
-                        p.Hp -= 1;
+                        p.Hp -= 2;
                     break;
                 case EffectType.Magouille2:
                     foreach (Player p in otherPlayerList)
-                        p.Money -= 20;
+                    {
+                        if (p.Money <= 0)
+                            p.Hp -= 2;
+                        else if (p.Money == 20)
+                        {
+                            p.Money -= 20;
+                            p.Hp -= 1;
+                        }
+                        else
+                            p.Money -= 40;
+                    }
                     break;
                 case EffectType.Malchance1:
-                    currentPlayer.Hp -= 2;
+                    currentPlayer.Hp -= 3;
                     break;
                 case EffectType.Malchance2:
-                    currentPlayer.Money -= 40;
+                    if (currentPlayer.Money == 20)
+                    {
+                        currentPlayer.Hp -= 2;
+                        currentPlayer.Money -= 20;
+                    }
+                    else if (currentPlayer.Money <= 0)
+                    {
+                        currentPlayer.Hp -= 3;
+                    }
+                    else if (currentPlayer.Money == 40)
+                    {
+                        currentPlayer.Hp -= 1;
+                        currentPlayer.Money -= 40;
+                    }
+                    else
+                    {
+                        currentPlayer.Money -= 60;
+                    }
                     break;
                 case EffectType.Paye:
-                    currentPlayer.Money += 40;
+                    currentPlayer.Money += 20;
                     break;
                 case EffectType.Service:
-                    currentPlayer.Money -= 20;
+                    currentPlayer.Money -= 40;
                     currentPlayer.Hp += 1;
                     break;
                 default:
@@ -77,7 +104,7 @@ namespace LesMagouilleurs
                         return EffectType.Magouille2;
                     }
                 case TileType.Malchance:
-                    randomNumber = random.Next(1, 5);
+                    randomNumber = random.Next(1, 3);
                     if (randomNumber == 1)
                     {
                         return EffectType.Malchance1;

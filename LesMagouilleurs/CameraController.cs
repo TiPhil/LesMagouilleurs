@@ -21,7 +21,7 @@ namespace LesMagouilleurs
             // (V) Reset the camera position to the default one
             if (Keyboard.GetState().IsKeyDown(Keys.V))
             {
-                view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
+                view = Matrix.CreateLookAt(new Vector3(0, 10, -1), new Vector3(0, 0, -1), Vector3.Negate(Vector3.UnitZ));
             }
 
             // (ARROWS) Moves the angle of the camera - Look up, down, left or right

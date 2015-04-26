@@ -57,9 +57,9 @@ namespace LesMagouilleurs
             return button.isClicked();
         }
 
-        public void Update(MouseState mouse)
+        public void Update(MouseState mouse, double totalGameTimeMilliseconds)
         {
-            button.Update(mouse);
+            button.Update(mouse, totalGameTimeMilliseconds);
         }
     }
 }

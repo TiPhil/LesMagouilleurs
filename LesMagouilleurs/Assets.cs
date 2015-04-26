@@ -38,7 +38,7 @@ namespace LesMagouilleurs
                 Ressources.Instance.ButtonRollDice,
                 graphics.GraphicsDevice,
                 new Vector2(146, 146),
-                new Vector2(700, 600),
+                new Vector2(Game1.SCREEN_WIDTH / 2 - 73, Game1.SCREEN_HEIGHT / 2 - 73),
                 Ressources.Instance.ButtonClickedSound);
 
             buttonOk = new Button(

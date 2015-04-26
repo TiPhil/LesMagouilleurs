@@ -41,7 +41,7 @@ namespace LesMagouilleurs
         // Matrix
         private Matrix worldTable = Matrix.CreateTranslation(new Vector3(0, -0.25f, 0));
         private Matrix worldBoard = Matrix.CreateScale(1.5f) * Matrix.CreateTranslation(new Vector3(0, 0, -1));
-        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 13, 0), new Vector3(0, 0, 0), Vector3.Negate(Vector3.UnitZ));
+        private Matrix view = Matrix.CreateLookAt(new Vector3(0, 10, -1), new Vector3(0, 0, -1), Vector3.Negate(Vector3.UnitZ));
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100f);
         
         // Players
@@ -58,7 +58,7 @@ namespace LesMagouilleurs
         private Vector3 position = new Vector3(2.4f, 0.3f, 1.4f); // what is this ?
 
         // DialogBoxes
-        private DialogBox dialogBoxRollingDice;
+        private DialogBox dialogBox;
 
         // Le constructeur de Game1
         public Game1()
@@ -108,7 +108,7 @@ namespace LesMagouilleurs
             Assets.Instance.Load(graphics);
 
             // Create dialog boxes
-            dialogBoxRollingDice = new DialogBox(graphics.GraphicsDevice, 500, 400, "", Assets.Instance.ButtonOk);
+            dialogBox = new DialogBox(graphics.GraphicsDevice, 345, 345, "", Assets.Instance.ButtonOk);
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -119,6 +119,7 @@ namespace LesMagouilleurs
         // Met a jour la logique du jeu
         protected override void Update(GameTime gameTime)
         {
+            Console.WriteLine("GameTime : " + gameTime.TotalGameTime.TotalMilliseconds);
             // For Mobile devices, this logic will close the Game when the Back button is pressed
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
@@ -129,10 +130,8 @@ namespace LesMagouilleurs
 
                 // Etat ou le joueur doit bracer les dees
                 case GameStates.RollingDice:
-                    Assets.Instance.ButtonRollDice.Update(currentMouseState);
+                    Assets.Instance.ButtonRollDice.Update(currentMouseState, gameTime.TotalGameTime.TotalMilliseconds);
 
-                    //if (buttonRollDice.isClicked() == true)
-                        // do something
                     if (currentPlayer.IsHuman && Assets.Instance.ButtonRollDice.isClicked() ||
                         !currentPlayer.IsHuman)
                     {
@@ -141,18 +140,17 @@ namespace LesMagouilleurs
                         diceResults = random.Next(1, 7);
                         diceResults += random.Next(1, 7);
 
-                        dialogBoxRollingDice.Message = currentPlayer.Name + " a brasse " + diceResults.ToString() + ".";
+                        dialogBox.Message = currentPlayer.Name + " a brasse " + diceResults.ToString() + ".";
 
                         moveToPosition = currentPlayer.GamePiece.GetNextPosition(diceResults);
-                        //worldPieceP1 = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(1.5f, 0.3f, 1.4f));
                     }
                     goto case GameStates.ControlableCamera;
 
                 // Etat pour afficher le resultat des dees
                 case GameStates.ShowDiceResult: ;
-                    dialogBoxRollingDice.Update(currentMouseState);
+                    dialogBox.Update(currentMouseState, gameTime.TotalGameTime.TotalMilliseconds);
 
-                    if (dialogBoxRollingDice.IsClicked())
+                    if (dialogBox.IsClicked())
                     {
                         currentGameState = GameStates.MovingGamePiece;
                     }
@@ -163,16 +161,15 @@ namespace LesMagouilleurs
                     if (currentPlayer.GamePiece.Move(moveToPosition))
                     {
                         effectType = BoardTile.GetEffectType(currentPlayer.GamePiece.Position);
-                        dialogBoxRollingDice.Message = BoardTile.GetEffectTypeMessage(effectType);
+                        dialogBox.Message = BoardTile.GetEffectTypeMessage(effectType);
                         currentGameState = GameStates.ShowSquareEffect;
                     }
-                    //buttonRollDice.Update(currentMouseState);
                     goto case GameStates.ControlableCamera;
 
                 // Etat qui affiche l'effet d'une case sur les joueurs
                 case GameStates.ShowSquareEffect: ;
-                    dialogBoxRollingDice.Update(currentMouseState);
-                    if (dialogBoxRollingDice.IsClicked())
+                    dialogBox.Update(currentMouseState, gameTime.TotalGameTime.TotalMilliseconds);
+                    if (dialogBox.IsClicked())
                     {
                         currentGameState = GameStates.ApplySquareEffect;
                     }
@@ -181,8 +178,9 @@ namespace LesMagouilleurs
 
                 // Etat qui effectu l'effet d'une case sur les joueurs
                 case GameStates.ApplySquareEffect: ;
-
-                    BoardTile.ApplyEffect(currentPlayer, GetOtherPlayers(), BoardTile.GetEffectType(currentPlayer.GamePiece.Position));
+                    //Console.WriteLine("message afficher : " + BoardTile.GetEffectTypeMessage(effectType));
+                    //Console.WriteLine
+                    BoardTile.ApplyEffect(currentPlayer, GetOtherPlayers(), effectType);
 
                     currentPlayer = NextPlayer();
                     currentGameState = GameStates.RollingDice;
@@ -222,7 +220,7 @@ namespace LesMagouilleurs
 
                 // Etat pour afficher le resultat des dees
                 case GameStates.ShowDiceResult: ;
-                    dialogBoxRollingDice.Draw(spriteBatch);
+                    dialogBox.Draw(spriteBatch);
                     goto default;
 
                 // Etat pour le mouvement des pieces des joueurs
@@ -231,7 +229,7 @@ namespace LesMagouilleurs
 
                 // Etat qui affiche l'effet d'une case sur les joueurs
                 case GameStates.ShowSquareEffect: ;
-                    dialogBoxRollingDice.Draw(spriteBatch);
+                    dialogBox.Draw(spriteBatch);
                     goto default;
 
                 // Etat qui effectu l'effet d'une case sur les joueurs
