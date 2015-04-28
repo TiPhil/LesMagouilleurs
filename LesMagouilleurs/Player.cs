@@ -22,7 +22,19 @@ namespace LesMagouilleurs
         private bool isHuman;
         private PlayerUI playerUI;
         private GamePiece gamePiece;
+        private bool active;
 
+        public bool Active
+        {
+            get
+            {
+                return active;
+            }
+            set
+            {
+                active = value;
+            }
+        }
         public string Name
         {
             get
@@ -78,6 +90,7 @@ namespace LesMagouilleurs
 
         public Player(bool isHuman, PlayerNumber playerNumber, string name, GraphicsDevice graphics)
         {
+            this.active = true;
             this.name = name;
             this.playerNumber = playerNumber;
             this.isHuman = isHuman;

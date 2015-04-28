@@ -48,7 +48,7 @@ namespace LesMagouilleurs
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(hudBackgroundTexture, position, hudBackgroundRectangle, hudBackgroundColor);
-            spriteBatch.DrawString(Ressources.Instance.Arial, message, position + new Vector2(width / 2 - 100, height / 2 - 10), Color.Black); // CENTER THE TEXT IN THE BOX
+            spriteBatch.DrawString(Ressources.Instance.Arial, message, position + new Vector2(width / 2 - 150, height / 2 - 10), Color.Black); // CENTER THE TEXT IN THE BOX
             button.Draw(spriteBatch);
         }
 

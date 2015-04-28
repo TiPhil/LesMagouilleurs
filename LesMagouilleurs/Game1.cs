@@ -20,7 +20,7 @@ namespace LesMagouilleurs
 
         // GameStates
         private enum GameStates { ReadingRules, MovingGamePiece, RollingDice, ShowDiceResult, ShowSquareEffect,
-            ApplySquareEffect, ControlableCamera }
+            ApplySquareEffect, ControlableCamera, EndGame }
         private GameStates currentGameState;
 
         // Window's size
@@ -119,7 +119,6 @@ namespace LesMagouilleurs
         // Met a jour la logique du jeu
         protected override void Update(GameTime gameTime)
         {
-            Console.WriteLine("GameTime : " + gameTime.TotalGameTime.TotalMilliseconds);
             // For Mobile devices, this logic will close the Game when the Back button is pressed
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
@@ -169,6 +168,7 @@ namespace LesMagouilleurs
                 // Etat qui affiche l'effet d'une case sur les joueurs
                 case GameStates.ShowSquareEffect: ;
                     dialogBox.Update(currentMouseState, gameTime.TotalGameTime.TotalMilliseconds);
+
                     if (dialogBox.IsClicked())
                     {
                         currentGameState = GameStates.ApplySquareEffect;
@@ -178,13 +178,30 @@ namespace LesMagouilleurs
 
                 // Etat qui effectu l'effet d'une case sur les joueurs
                 case GameStates.ApplySquareEffect: ;
-                    //Console.WriteLine("message afficher : " + BoardTile.GetEffectTypeMessage(effectType));
-                    //Console.WriteLine
+
                     BoardTile.ApplyEffect(currentPlayer, GetOtherPlayers(), effectType);
 
-                    currentPlayer = NextPlayer();
-                    currentGameState = GameStates.RollingDice;
+                    // Verifier s'il faut eliminer certain joueur en fonction de leur PV
+                    CheckPlayerElimination();
 
+                    // Verifier s'il y a un gagnant (le dernier joueur restant en vie)
+                    if (CheckEndGame())
+                    {
+                        currentGameState = GameStates.EndGame;
+                    }
+                    else
+                    {
+                        currentPlayer = NextPlayer();
+                        currentGameState = GameStates.RollingDice;
+                    }
+
+                    goto case GameStates.ControlableCamera;
+
+                case GameStates.EndGame:;
+                    dialogBox.Update(currentMouseState, gameTime.TotalGameTime.TotalMilliseconds);
+                    dialogBox.Message = GetWinningPlayer().Name + " a gagne la partie!";
+                    if (dialogBox.IsClicked())
+                        this.Exit();
                     goto case GameStates.ControlableCamera;
 
                 // Etat permettant le control de la camera
@@ -236,13 +253,21 @@ namespace LesMagouilleurs
                 case GameStates.ApplySquareEffect: ;
                     goto default;
 
+                case GameStates.EndGame: ;
+                    dialogBox.Draw(spriteBatch);
+                    goto default;
+
                 default:
                     DrawModel(Ressources.Instance.Table, worldTable, view, projection);
                     DrawModel(Ressources.Instance.Board, worldBoard, view, projection);
-                    DrawModel(Ressources.Instance.GamePieceP1, player1.GamePiece.World, view, projection);
-                    DrawModel(Ressources.Instance.GamePieceP2, player2.GamePiece.World, view, projection);
-                    DrawModel(Ressources.Instance.GamePieceP3, player3.GamePiece.World, view, projection);
-                    DrawModel(Ressources.Instance.GamePieceP4, player4.GamePiece.World, view, projection);
+                    if(player1.Active)
+                        DrawModel(Ressources.Instance.GamePieceP1, player1.GamePiece.World, view, projection);
+                    if(player2.Active)
+                        DrawModel(Ressources.Instance.GamePieceP2, player2.GamePiece.World, view, projection);
+                    if(player3.Active)
+                        DrawModel(Ressources.Instance.GamePieceP3, player3.GamePiece.World, view, projection);
+                    if(player4.Active)
+                        DrawModel(Ressources.Instance.GamePieceP4, player4.GamePiece.World, view, projection);
                     break;
             }
 
@@ -254,10 +279,14 @@ namespace LesMagouilleurs
         // Dessine le UI de chaque joueur
         private void DrawUI()
         {
-            player1.PlayerUI.Draw(spriteBatch);
-            player2.PlayerUI.Draw(spriteBatch);
-            player3.PlayerUI.Draw(spriteBatch);
-            player4.PlayerUI.Draw(spriteBatch);
+            if(player1.Active)
+                player1.PlayerUI.Draw(spriteBatch);
+            if(player2.Active)
+                player2.PlayerUI.Draw(spriteBatch);
+            if(player3.Active)
+                player3.PlayerUI.Draw(spriteBatch);
+            if(player4.Active)
+                player4.PlayerUI.Draw(spriteBatch);
         }
 
         // Fait la liste des autres joueurs a qui se n'est pas leur tour
@@ -277,24 +306,74 @@ namespace LesMagouilleurs
             return otherPlayerList;
         }
 
+        private void CheckPlayerElimination()
+        {
+            if (player1.Active && player1.Hp <= 0)
+                player1.Active = false;
+            if (player2.Active && player2.Hp <= 0)
+                player2.Active = false;
+            if (player3.Active && player3.Hp <= 0)
+                player3.Active = false;
+            if (player4.Active && player4.Hp <= 0)
+                player4.Active = false;
+        }
+
+        private bool CheckEndGame()
+        {
+            if (!player1.Active && !player2.Active && !player3.Active ||
+                !player1.Active && !player2.Active && !player4.Active ||
+                !player1.Active && !player3.Active && !player4.Active ||
+                !player2.Active && !player3.Active && !player4.Active)
+                return true;
+            else
+                return false;
+        }
+
+        private Player GetWinningPlayer()
+        {
+            if (player1.Active)
+                return player1;
+            else if (player2.Active)
+                return player2;
+            else if (player3.Active)
+                return player3;
+            else return player4;
+        }
+
         // Retourne le prochain joueur (ex.: joueur1 -> joueur2)
         private Player NextPlayer()
         {
             if (currentPlayer == player1)
             {
-                return player2;
+                if (player2.Active)
+                    return player2;
+                else if (player3.Active)
+                    return player3;
+                else return player4;
             }
             else if (currentPlayer == player2)
             {
-                return player3;
+                if (player3.Active)
+                    return player3;
+                else if (player4.Active)
+                    return player4;
+                else return player1;
             }
             else if (currentPlayer == player3)
             {
-                return player4;
+                if (player4.Active)
+                    return player4;
+                else if (player1.Active)
+                    return player1;
+                else return player2;
             }
             else if (currentPlayer == player4)
             {
-                return player1;
+                if (player1.Active)
+                    return player1;
+                else if (player2.Active)
+                    return player2;
+                else return player3;
             }
             return player1;
         }
@@ -322,7 +401,7 @@ namespace LesMagouilleurs
                     effect.DirectionalLight0.Direction = new Vector3(0, -1, 0); // La lumiere vient d'en haut de la table
                     effect.DirectionalLight0.SpecularColor = new Vector3(0.2f, 0.18f, 0.14f);
                     effect.DirectionalLight0.DiffuseColor = new Vector3(0.1f, 0.08f, 0.4f);
-                    effect.AmbientLightColor = new Vector3(0.4f, 0.35f, 0.25f);
+                    effect.AmbientLightColor = new Vector3(0.4f, 0.35f, 0.25f); 
                     effect.EmissiveColor = new Vector3(0.4f, 0.35f, 0.25f);
 
                     effect.World = world;

@@ -40,68 +40,6 @@ namespace LesMagouilleurs
         // Position Y
         private const float POS_Y = 0.3f;
 
-        // Board squares
-        /* TO DELETE
-        private static Vector3 SQUARE_1_P1 = new Vector3(POS_X4_L, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_1_P2 = new Vector3(POS_X4_R, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_1_P3 = new Vector3(POS_X4_L, POS_Y, POS_Z4_B);
-        private static Vector3 SQUARE_1_P4 = new Vector3(POS_X4_R, POS_Y, POS_Z4_B);
-
-        private static Vector3 SQUARE_2_P1 = new Vector3(POS_X3_L, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_2_P2 = new Vector3(POS_X3_R, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_2_P3 = new Vector3(POS_X3_L, POS_Y, POS_Z4_B);
-        private static Vector3 SQUARE_2_P4 = new Vector3(POS_X3_R, POS_Y, POS_Z4_B);
-
-        private static Vector3 SQUARE_3_P1 = new Vector3(POS_X2_L, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_3_P2 = new Vector3(POS_X2_R, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_3_P3 = new Vector3(POS_X2_L, POS_Y, POS_Z4_B);
-        private static Vector3 SQUARE_3_P4 = new Vector3(POS_X2_R, POS_Y, POS_Z4_B);
-
-        private static Vector3 SQUARE_4_P1 = new Vector3(POS_X1_L, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_4_P2 = new Vector3(POS_X1_R, POS_Y, POS_Z4_T);
-        private static Vector3 SQUARE_4_P3 = new Vector3(POS_X1_L, POS_Y, POS_Z4_B);
-        private static Vector3 SQUARE_4_P4 = new Vector3(POS_X1_R, POS_Y, POS_Z4_B);
-
-        private static Vector3 SQUARE_5_P1 = new Vector3(POS_X1_L, POS_Y, POS_Z3_T);
-        private static Vector3 SQUARE_5_P2 = new Vector3(POS_X1_R, POS_Y, POS_Z3_T);
-        private static Vector3 SQUARE_5_P3 = new Vector3(POS_X1_L, POS_Y, POS_Z3_B);
-        private static Vector3 SQUARE_5_P4 = new Vector3(POS_X1_R, POS_Y, POS_Z3_B);
-
-        private static Vector3 SQUARE_6_P1 = new Vector3(POS_X1_L, POS_Y, POS_Z2_T);
-        private static Vector3 SQUARE_6_P2 = new Vector3(POS_X1_R, POS_Y, POS_Z2_T);
-        private static Vector3 SQUARE_6_P3 = new Vector3(POS_X1_L, POS_Y, POS_Z2_B);
-        private static Vector3 SQUARE_6_P4 = new Vector3(POS_X1_R, POS_Y, POS_Z2_B);
-
-        private static Vector3 SQUARE_7_P1 = new Vector3(POS_X1_L, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_7_P2 = new Vector3(POS_X1_R, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_7_P3 = new Vector3(POS_X1_L, POS_Y, POS_Z1_B);
-        private static Vector3 SQUARE_7_P4 = new Vector3(POS_X1_R, POS_Y, POS_Z1_B);
-
-        private static Vector3 SQUARE_8_P1 = new Vector3(POS_X2_L, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_8_P2 = new Vector3(POS_X2_R, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_8_P3 = new Vector3(POS_X2_L, POS_Y, POS_Z1_B);
-        private static Vector3 SQUARE_8_P4 = new Vector3(POS_X2_R, POS_Y, POS_Z1_B);
-
-        private static Vector3 SQUARE_9_P1 = new Vector3(POS_X3_L, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_9_P2 = new Vector3(POS_X3_R, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_9_P3 = new Vector3(POS_X3_L, POS_Y, POS_Z1_B);
-        private static Vector3 SQUARE_9_P4 = new Vector3(POS_X3_R, POS_Y, POS_Z1_B);
-
-        private static Vector3 SQUARE_10_P1 = new Vector3(POS_X4_L, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_10_P2 = new Vector3(POS_X4_R, POS_Y, POS_Z1_T);
-        private static Vector3 SQUARE_10_P3 = new Vector3(POS_X4_L, POS_Y, POS_Z1_B);
-        private static Vector3 SQUARE_10_P4 = new Vector3(POS_X4_R, POS_Y, POS_Z1_B);
-
-        private static Vector3 SQUARE_11_P1 = new Vector3(POS_X4_L, POS_Y, POS_Z2_T);
-        private static Vector3 SQUARE_11_P2 = new Vector3(POS_X4_R, POS_Y, POS_Z2_T);
-        private static Vector3 SQUARE_11_P3 = new Vector3(POS_X4_L, POS_Y, POS_Z2_B);
-        private static Vector3 SQUARE_11_P4 = new Vector3(POS_X4_R, POS_Y, POS_Z2_B);
-
-        private static Vector3 SQUARE_12_P1 = new Vector3(POS_X4_L, POS_Y, POS_Z3_T);
-        private static Vector3 SQUARE_12_P2 = new Vector3(POS_X4_R, POS_Y, POS_Z3_T);
-        private static Vector3 SQUARE_12_P3 = new Vector3(POS_X4_L, POS_Y, POS_Z3_B);
-        private static Vector3 SQUARE_12_P4 = new Vector3(POS_X4_R, POS_Y, POS_Z3_B);
-        */
         // Class attributes
         private PlayerNumber playerNumber;
         private int position; // 1 to 12

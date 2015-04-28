@@ -73,8 +73,11 @@ namespace LesMagouilleurs
                     currentPlayer.Money += 20;
                     break;
                 case EffectType.Service:
-                    currentPlayer.Money -= 40;
-                    currentPlayer.Hp += 1;
+                    if (currentPlayer.Money >= 40)
+                    {
+                        currentPlayer.Money -= 40;
+                        currentPlayer.Hp += 1;
+                    }
                     break;
                 default:
                     break;
