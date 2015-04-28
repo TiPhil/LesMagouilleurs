@@ -306,6 +306,7 @@ namespace LesMagouilleurs
             return otherPlayerList;
         }
 
+        // Verifi si les joueurs n'ont pu de point de vie (PV) et les rends inactif
         private void CheckPlayerElimination()
         {
             if (player1.Active && player1.Hp <= 0)
@@ -318,6 +319,7 @@ namespace LesMagouilleurs
                 player4.Active = false;
         }
 
+        // Verifi si 3 joueurs son elimine, donc si c'est la fin de la partie
         private bool CheckEndGame()
         {
             if (!player1.Active && !player2.Active && !player3.Active ||
@@ -329,6 +331,7 @@ namespace LesMagouilleurs
                 return false;
         }
 
+        // Retourne le joueur gagnant (le joueur actif)
         private Player GetWinningPlayer()
         {
             if (player1.Active)

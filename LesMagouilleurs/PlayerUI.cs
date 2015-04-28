@@ -73,19 +73,13 @@ namespace LesMagouilleurs
 
             hudColorRectangle.Width = width;
             hudColorRectangle.Height = height / 5;
-
-            //texture.SetData(new Color[] { myTransparentColor });
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //spriteBatch.Draw(texture, whiteBackground, myTransparentColor);
             spriteBatch.Draw(hudBackgroundTexture, position, hudBackgroundRectangle, hudBackgroundColor);
             spriteBatch.Draw(hudColorTexture, position + new Vector2(0, height / 5 * 4), hudColorRectangle, hudColorColor);
-            //spriteBatch.DrawString(ressources.Arial, playerStats, position + new Vector2(9, 9), Color.Black);
             spriteBatch.DrawString(Ressources.Instance.Arial, playerName + " " + playerMoney + " $ " + playerHP + " PV", position + new Vector2(9, 9), Color.Black);
-
         }
 
     }

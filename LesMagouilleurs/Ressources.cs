@@ -66,6 +66,7 @@ namespace LesMagouilleurs
             }
         }
 
+        // Met en memoire les differentes ressources necessaire au programme
         public void Load(GameServiceContainer Services)
         {
             ContentManager content = new ContentManager(Services, "Content");

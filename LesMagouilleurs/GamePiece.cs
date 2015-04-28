@@ -15,7 +15,6 @@ namespace LesMagouilleurs
         {
             LEFT, TOP, RIGHT, BOTTOM
         }
-        //private GoingDirection goingDirection = GoingDirection.LEFT; TO DELETE
 
         // Positions X
         private const float POS_X1_L = -3.15f;
@@ -118,6 +117,7 @@ namespace LesMagouilleurs
             this.playerNumber = playerNumber;
             position = 1; // starting position for all players
 
+            // Positionne le model de la piece du joueur en fonction du numero de joueur (1,2,3 ou 4)
             switch (playerNumber)
             {
                 case PlayerNumber.P1:
@@ -158,9 +158,13 @@ namespace LesMagouilleurs
             world = Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(new Vector3(x, y, z));
         }
 
+        // Bouge la piece d'un joueur
         public bool Move(int positionToMove)
         {
             Vector3 coord = new Vector3(x, y, z);
+            
+            // En fonctione du numero de joueur, verifier sa position de case et
+            // le faire bouger dans la bonne direction
             switch (playerNumber)
             {
                 case PlayerNumber.P1:
@@ -356,6 +360,7 @@ namespace LesMagouilleurs
             return false;
         }
 
+        // Methode permettant de faire le mouvement de la piece d'un joueur
         private void MoveCoord(Vector3 coord, GoingDirection goingDirection, float POS)
         {
             compteur += 0.05f;
@@ -410,6 +415,8 @@ namespace LesMagouilleurs
 
         }
 
+        // Suite a un brasser de dee, retourne la position final de la piece d'un joueur
+        // Ex.: Case 11 + un brasse de dee de 2 = Case 1
         public int GetNextPosition(int diceResults)
         {
             int newPosition = 0;
